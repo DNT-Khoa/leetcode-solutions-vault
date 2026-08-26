@@ -1,0 +1,9 @@
+{
+  "slug": "subsets",
+  "title": "Subsets",
+  "difficulty": "Medium",
+  "questionId": "78",
+  "url": "https://leetcode.com/problems/subsets/",
+  "exampleTestcases": "[1,2,3]\n[0]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public List<List<Integer>> subsets(int[] nums) {\n        \n    }\n}\n"
+}
