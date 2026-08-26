@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "problems": {
+    "subsets": {
+      "slug": "subsets",
+      "title": "Subsets",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/subsets/",
+      "rating": "medium",
+      "attempts": 2,
+      "firstSolved": "2026-08-26T17:07:24.100354+00:00",
+      "lastAttempt": "2026-08-26T17:21:30.740876+00:00"
+    }
+  }
+}
