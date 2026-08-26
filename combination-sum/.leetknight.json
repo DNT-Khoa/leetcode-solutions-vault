@@ -1,0 +1,9 @@
+{
+  "slug": "combination-sum",
+  "title": "Combination Sum",
+  "difficulty": "Medium",
+  "questionId": "39",
+  "url": "https://leetcode.com/problems/combination-sum/",
+  "exampleTestcases": "[2,3,6,7]\n7\n[2,3,5]\n8\n[2]\n1",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public List<List<Integer>> combinationSum(int[] candidates, int target) {\n        \n    }\n}\n"
+}
