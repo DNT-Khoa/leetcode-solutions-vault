@@ -20,6 +20,16 @@
       "attempts": 2,
       "firstSolved": "2026-08-26T17:47:09.908151+00:00",
       "lastAttempt": "2026-08-26T18:04:09.103746+00:00"
+    },
+    "combination-sum-ii": {
+      "slug": "combination-sum-ii",
+      "title": "Combination Sum II",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/combination-sum-ii/",
+      "rating": "hard",
+      "attempts": 1,
+      "firstSolved": "2026-08-27T18:35:00.060871+00:00",
+      "lastAttempt": "2026-08-27T18:35:00.060871+00:00"
     }
   }
 }
