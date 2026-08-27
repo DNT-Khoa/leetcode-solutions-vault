@@ -113,6 +113,25 @@ At each level, up to `N` branches. Levels: 0 through `h = T/M`, so `h + 1` level
 - **Copy at each leaf:** up to `O(T/M)`
 - **Time (usually written):** `O(N^(T/M + 1))` — the copy factor gets absorbed into the exponent.
 
+### Case C: permutations (Permutations, Permutations II)
+
+Every arrangement of `N` distinct items is distinct — order matters — so there are `N!` leaves.
+
+Nodes at level `k` = ordered pick of `k` from `N` = `N! / (N-k)!`.
+
+**Total nodes** across all levels:
+```
+Σ N!/(N-k)!  for k = 0..N
+  = N! · (1/0! + 1/1! + 1/2! + ... + 1/N!)
+  ≈ e · N!  (≈ 2.72 · N!)
+```
+
+The inner sum is the partial Taylor series for `e`. The bottom two levels dominate: both level `N-1` and level `N` have exactly `N!` nodes, and everything above them adds only a smaller constant.
+
+- **Total nodes:** `e · N!` = `O(N!)`
+- **Work per node:** `O(N)` (loop over N choices, or O(N) copy at leaf)
+- **Time:** `O(N · N!)` — the constant `e` is absorbed by Big-O.
+
 ### Why the `+1` in the time exponent?
 
 The tree of height `h` has `h+1` **levels** (level 0 is the root). Total nodes ≈ last level × N = `N^h · N = N^(h+1)`.
@@ -225,7 +244,30 @@ Total calls: **9**. Upper bound: `N^(T/M + 1) = 2^4 = 16`. ✓ (The `startIdx` p
 
 ---
 
-## 8. Quick checklist when solving a new backtracking problem
+## 8. Concrete tree: Permutations
+
+`nums = [1, 2, 3]`, `N = 3` → expect `3! = 6` leaves and `≈ e · 3! ≈ 16` total nodes.
+
+```
+                          []
+              ┌───────────┼───────────┐
+             1            2            3
+          ┌──┴──┐      ┌──┴──┐      ┌──┴──┐
+         2     3      1     3      1     2
+         │     │      │     │      │     │
+         3     2      3     1      2     1
+       [1,2,3][1,3,2][2,1,3][2,3,1][3,1,2][3,2,1]
+```
+
+Level counts: 1 + 3 + 6 + 6 = **16 nodes** = `2.67 · 3!` ≈ `e · N!` ✓ (converges to `e ≈ 2.72` as N grows).
+
+- Loop uses `for (int i = 0; i < N; i++)` — starts at `0` every time (no `startIdx`).
+- Skips already-used values with `if (used[i]) continue;`.
+- The bottom two levels (each `N!` nodes) dominate — every level above them contributes only a small constant of extra nodes.
+
+---
+
+## 9. Quick checklist when solving a new backtracking problem
 
 - [ ] Is the goal a subset, combination, permutation, or partition?
 - [ ] Can elements be reused? (`i` vs `i + 1` in the recursive call)

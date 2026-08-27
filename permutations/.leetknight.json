@@ -1,0 +1,9 @@
+{
+  "slug": "permutations",
+  "title": "Permutations",
+  "difficulty": "Medium",
+  "questionId": "46",
+  "url": "https://leetcode.com/problems/permutations/",
+  "exampleTestcases": "[1,2,3]\n[0,1]\n[1]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public List<List<Integer>> permute(int[] nums) {\n        \n    }\n}\n"
+}

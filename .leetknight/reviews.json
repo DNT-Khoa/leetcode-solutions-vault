@@ -30,6 +30,16 @@
       "attempts": 2,
       "firstSolved": "2026-08-27T18:35:00.060871+00:00",
       "lastAttempt": "2026-08-27T18:41:01.451620+00:00"
+    },
+    "permutations": {
+      "slug": "permutations",
+      "title": "Permutations",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/permutations/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-08-27T19:07:07.711518+00:00",
+      "lastAttempt": "2026-08-27T19:07:07.711518+00:00"
     }
   }
 }
