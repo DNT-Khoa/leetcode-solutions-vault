@@ -1,0 +1,9 @@
+{
+  "slug": "generate-parentheses",
+  "title": "Generate Parentheses",
+  "difficulty": "Medium",
+  "questionId": "22",
+  "url": "https://leetcode.com/problems/generate-parentheses/",
+  "exampleTestcases": "3\n1",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public List<String> generateParenthesis(int n) {\n        \n    }\n}\n"
+}

@@ -50,6 +50,16 @@
       "attempts": 1,
       "firstSolved": "2026-08-29T18:31:28.099438+00:00",
       "lastAttempt": "2026-08-29T18:31:28.099438+00:00"
+    },
+    "generate-parentheses": {
+      "slug": "generate-parentheses",
+      "title": "Generate Parentheses",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/generate-parentheses/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-08-29T18:59:17.135012+00:00",
+      "lastAttempt": "2026-08-29T18:59:17.135012+00:00"
     }
   }
 }
