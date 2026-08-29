@@ -1,0 +1,9 @@
+{
+  "slug": "subsets-ii",
+  "title": "Subsets II",
+  "difficulty": "Medium",
+  "questionId": "90",
+  "url": "https://leetcode.com/problems/subsets-ii/",
+  "exampleTestcases": "[1,2,2]\n[0]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public List<List<Integer>> subsetsWithDup(int[] nums) {\n        \n    }\n}\n"
+}
