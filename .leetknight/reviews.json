@@ -80,6 +80,16 @@
       "attempts": 1,
       "firstSolved": "2026-08-30T09:13:37.479272+00:00",
       "lastAttempt": "2026-08-30T09:13:37.479272+00:00"
+    },
+    "word-search": {
+      "slug": "word-search",
+      "title": "Word Search",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/word-search/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-08-30T14:49:38.198086+00:00",
+      "lastAttempt": "2026-08-30T14:49:38.198086+00:00"
     }
   }
 }
