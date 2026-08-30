@@ -1,0 +1,9 @@
+{
+  "slug": "palindrome-partitioning",
+  "title": "Palindrome Partitioning",
+  "difficulty": "Medium",
+  "questionId": "131",
+  "url": "https://leetcode.com/problems/palindrome-partitioning/",
+  "exampleTestcases": "\"aab\"\n\"a\"",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public List<List<String>> partition(String s) {\n        \n    }\n}\n"
+}
