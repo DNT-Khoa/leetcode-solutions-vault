@@ -1,0 +1,9 @@
+{
+  "slug": "letter-combinations-of-a-phone-number",
+  "title": "Letter Combinations of a Phone Number",
+  "difficulty": "Medium",
+  "questionId": "17",
+  "url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+  "exampleTestcases": "\"23\"\n\"2\"",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public List<String> letterCombinations(String digits) {\n        \n    }\n}\n"
+}
