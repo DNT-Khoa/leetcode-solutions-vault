@@ -100,6 +100,16 @@
       "attempts": 2,
       "firstSolved": "2026-09-02T09:10:10.527357+00:00",
       "lastAttempt": "2026-09-02T09:17:10.489777+00:00"
+    },
+    "max-area-of-island": {
+      "slug": "max-area-of-island",
+      "title": "Max Area of Island",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/max-area-of-island/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-09-02T09:35:46.545510+00:00",
+      "lastAttempt": "2026-09-02T09:35:46.545510+00:00"
     }
   }
 }
