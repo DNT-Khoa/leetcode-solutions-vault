@@ -110,6 +110,16 @@
       "attempts": 1,
       "firstSolved": "2026-09-02T09:35:46.545510+00:00",
       "lastAttempt": "2026-09-02T09:35:46.545510+00:00"
+    },
+    "shortest-path-in-binary-matrix": {
+      "slug": "shortest-path-in-binary-matrix",
+      "title": "Shortest Path in Binary Matrix",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-09-02T17:23:50.936236+00:00",
+      "lastAttempt": "2026-09-02T17:23:50.936236+00:00"
     }
   }
 }

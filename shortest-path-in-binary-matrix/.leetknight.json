@@ -1,0 +1,9 @@
+{
+  "slug": "shortest-path-in-binary-matrix",
+  "title": "Shortest Path in Binary Matrix",
+  "difficulty": "Medium",
+  "questionId": "1171",
+  "url": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
+  "exampleTestcases": "[[0,1],[1,0]]\n[[0,0,0],[1,1,0],[1,1,0]]\n[[1,0,0],[1,1,0],[1,1,0]]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public int shortestPathBinaryMatrix(int[][] grid) {\n        \n    }\n}\n"
+}
