@@ -130,6 +130,16 @@
       "attempts": 2,
       "firstSolved": "2026-09-05T16:25:45.856729+00:00",
       "lastAttempt": "2026-09-05T16:29:25.469349+00:00"
+    },
+    "clone-graph": {
+      "slug": "clone-graph",
+      "title": "Clone Graph",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/clone-graph/",
+      "rating": "medium",
+      "attempts": 2,
+      "firstSolved": "2026-09-05T17:46:21.537877+00:00",
+      "lastAttempt": "2026-09-05T17:48:19.753442+00:00"
     }
   }
 }
