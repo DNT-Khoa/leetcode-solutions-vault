@@ -140,6 +140,16 @@
       "attempts": 2,
       "firstSolved": "2026-09-05T17:46:21.537877+00:00",
       "lastAttempt": "2026-09-05T17:48:19.753442+00:00"
+    },
+    "pacific-atlantic-water-flow": {
+      "slug": "pacific-atlantic-water-flow",
+      "title": "Pacific Atlantic Water Flow",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/pacific-atlantic-water-flow/",
+      "rating": "medium",
+      "attempts": 2,
+      "firstSolved": "2026-09-05T20:14:03.084849+00:00",
+      "lastAttempt": "2026-09-05T20:16:17.798651+00:00"
     }
   }
 }
