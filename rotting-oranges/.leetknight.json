@@ -1,0 +1,9 @@
+{
+  "slug": "rotting-oranges",
+  "title": "Rotting Oranges",
+  "difficulty": "Medium",
+  "questionId": "1036",
+  "url": "https://leetcode.com/problems/rotting-oranges/",
+  "exampleTestcases": "[[2,1,1],[1,1,0],[0,1,1]]\n[[2,1,1],[0,1,1],[1,0,1]]\n[[0,2]]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public int orangesRotting(int[][] grid) {\n        \n    }\n}\n"
+}
