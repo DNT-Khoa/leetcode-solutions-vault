@@ -160,6 +160,16 @@
       "attempts": 1,
       "firstSolved": "2026-09-07T18:08:05.078420+00:00",
       "lastAttempt": "2026-09-07T18:08:05.078420+00:00"
+    },
+    "maximum-average-subarray-i": {
+      "slug": "maximum-average-subarray-i",
+      "title": "Maximum Average Subarray I",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/maximum-average-subarray-i/",
+      "rating": "easy",
+      "attempts": 1,
+      "firstSolved": "2026-09-09T18:12:01.446632+00:00",
+      "lastAttempt": "2026-09-09T18:12:01.446632+00:00"
     }
   }
 }
