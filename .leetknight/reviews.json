@@ -170,6 +170,16 @@
       "attempts": 1,
       "firstSolved": "2026-09-09T18:12:01.446632+00:00",
       "lastAttempt": "2026-09-09T18:12:01.446632+00:00"
+    },
+    "maximum-compatibility-score-sum": {
+      "slug": "maximum-compatibility-score-sum",
+      "title": "Maximum Compatibility Score Sum",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/maximum-compatibility-score-sum/",
+      "rating": "hard",
+      "attempts": 1,
+      "firstSolved": "2026-09-09T20:08:20.453518+00:00",
+      "lastAttempt": "2026-09-09T20:08:20.453518+00:00"
     }
   }
 }
