@@ -1,0 +1,9 @@
+{
+  "slug": "combinations",
+  "title": "Combinations",
+  "difficulty": "Medium",
+  "questionId": "77",
+  "url": "https://leetcode.com/problems/combinations/",
+  "exampleTestcases": "4\n2\n1\n1",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public List<List<Integer>> combine(int n, int k) {\n        \n    }\n}\n"
+}
