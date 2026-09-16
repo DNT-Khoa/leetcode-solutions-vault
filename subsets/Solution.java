@@ -1,28 +1,22 @@
+// Time:  O(N.2^N)
+// Space: O(N)
 
 import java.util.ArrayList;
 import java.util.List;
 
-// Time:  O(n.2^n) where n is length of nums
-// Space: O(n)
-// Note:
-// copy the selected list of result (result.add(new Array<>(selected))) takes O(n)
-
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
-        explore(nums, result, 0, new ArrayList<>());
+        dfs(nums, 0, new ArrayList<>(), result);
         return result;
     }
 
-    public void explore(int[] nums, List<List<Integer>> result, int startIdx, List<Integer> selected) {
+    void dfs(int[] nums, int start, List<Integer> selected, List<List<Integer>> result) {
         result.add(new ArrayList<>(selected));
 
-        for (int i = startIdx; i < nums.length; i++) {
-            // select
+        for (int i = start; i < nums.length; i++) {
             selected.add(nums[i]);
-            // explore
-            explore(nums, result, i + 1, selected);
-            // backtrack
+            dfs(nums, i + 1, selected, result);
             selected.remove(selected.size() - 1);
         }
     }

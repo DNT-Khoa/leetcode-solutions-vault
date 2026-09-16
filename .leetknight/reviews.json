@@ -6,10 +6,10 @@
       "title": "Subsets",
       "difficulty": "Medium",
       "url": "https://leetcode.com/problems/subsets/",
-      "rating": "medium",
-      "attempts": 2,
+      "rating": "easy",
+      "attempts": 3,
       "firstSolved": "2026-08-26T17:07:24.100354+00:00",
-      "lastAttempt": "2026-08-26T17:21:30.740876+00:00"
+      "lastAttempt": "2026-09-16T02:55:12.313889+00:00"
     },
     "combination-sum": {
       "slug": "combination-sum",
@@ -36,10 +36,10 @@
       "title": "Permutations",
       "difficulty": "Medium",
       "url": "https://leetcode.com/problems/permutations/",
-      "rating": "medium",
-      "attempts": 1,
+      "rating": "easy",
+      "attempts": 2,
       "firstSolved": "2026-08-27T19:07:07.711518+00:00",
-      "lastAttempt": "2026-08-27T19:07:07.711518+00:00"
+      "lastAttempt": "2026-09-16T03:14:20.676221+00:00"
     },
     "subsets-ii": {
       "slug": "subsets-ii",
