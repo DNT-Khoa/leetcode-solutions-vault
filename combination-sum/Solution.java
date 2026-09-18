@@ -1,36 +1,27 @@
-// Time:  O(N^(T/M + 1)) where T is target, M is min(candidates), and N is size of candidates
-// Space: O(T/M)
 
 import java.util.ArrayList;
 import java.util.List;
 
+// Time:  O(N^(T/M)) where T is target and M is smallest value in candidates
+// Space: O(T/M)
+
 class Solution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<>();
-        explore(candidates, target, result, new ArrayList<>(), 0, 0);
+        dfs(candidates, target, 0, 0, new ArrayList<>(), result);
         return result;
     }
 
-    void explore(
-        int[] candidates,
-        int target,
-        List<List<Integer>> result,
-        List<Integer> selected,
-        int startIdx,
-        int sum
-    ) {
+    void dfs(int[] candidates, int target, int start, int sum, List<Integer> selected, List<List<Integer>> result) {
         if (sum > target) return;
         if (sum == target) {
             result.add(new ArrayList<>(selected));
             return;
         }
 
-        for (int i = startIdx; i < candidates.length; i++) {
-            // select
+        for (int i = start; i < candidates.length; i++) {
             selected.add(candidates[i]);
-            // explore
-            explore(candidates, target, result, selected, i, sum + candidates[i]);
-            // backtrack
+            dfs(candidates, target, i, sum + candidates[i], selected, result);
             selected.remove(selected.size() - 1);
         }
     }

@@ -16,10 +16,10 @@
       "title": "Combination Sum",
       "difficulty": "Medium",
       "url": "https://leetcode.com/problems/combination-sum/",
-      "rating": "hard",
-      "attempts": 2,
+      "rating": "easy",
+      "attempts": 4,
       "firstSolved": "2026-08-26T17:47:09.908151+00:00",
-      "lastAttempt": "2026-08-26T18:04:09.103746+00:00"
+      "lastAttempt": "2026-09-18T18:08:59.980235+00:00"
     },
     "combination-sum-ii": {
       "slug": "combination-sum-ii",
