@@ -200,6 +200,16 @@
       "attempts": 1,
       "firstSolved": "2026-09-16T04:45:46.417362+00:00",
       "lastAttempt": "2026-09-16T04:45:46.417362+00:00"
+    },
+    "n-queens": {
+      "slug": "n-queens",
+      "title": "N-Queens",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/n-queens/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-09-19T10:14:55.931853+00:00",
+      "lastAttempt": "2026-09-19T10:14:55.931853+00:00"
     }
   }
 }

@@ -1,0 +1,9 @@
+{
+  "slug": "n-queens",
+  "title": "N-Queens",
+  "difficulty": "Hard",
+  "questionId": "51",
+  "url": "https://leetcode.com/problems/n-queens/",
+  "exampleTestcases": "4\n1",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public List<List<String>> solveNQueens(int n) {\n        \n    }\n}\n"
+}
