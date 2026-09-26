@@ -220,6 +220,16 @@
       "attempts": 1,
       "firstSolved": "2026-09-26T09:55:48.653911+00:00",
       "lastAttempt": "2026-09-26T09:55:48.653911+00:00"
+    },
+    "daily-temperatures": {
+      "slug": "daily-temperatures",
+      "title": "Daily Temperatures",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/daily-temperatures/",
+      "rating": "easy",
+      "attempts": 1,
+      "firstSolved": "2026-09-26T10:09:48.334503+00:00",
+      "lastAttempt": "2026-09-26T10:09:48.334503+00:00"
     }
   }
 }
