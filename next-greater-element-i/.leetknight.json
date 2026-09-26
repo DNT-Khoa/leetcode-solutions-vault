@@ -1,0 +1,9 @@
+{
+  "slug": "next-greater-element-i",
+  "title": "Next Greater Element I",
+  "difficulty": "Easy",
+  "questionId": "496",
+  "url": "https://leetcode.com/problems/next-greater-element-i/",
+  "exampleTestcases": "[4,1,2]\n[1,3,4,2]\n[2,4]\n[1,2,3,4]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public int[] nextGreaterElement(int[] nums1, int[] nums2) {\n        \n    }\n}\n"
+}
