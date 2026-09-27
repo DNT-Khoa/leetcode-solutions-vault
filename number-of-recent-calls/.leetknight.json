@@ -1,0 +1,9 @@
+{
+  "slug": "number-of-recent-calls",
+  "title": "Number of Recent Calls",
+  "difficulty": "Easy",
+  "questionId": "969",
+  "url": "https://leetcode.com/problems/number-of-recent-calls/",
+  "exampleTestcases": "[\"RecentCounter\",\"ping\",\"ping\",\"ping\",\"ping\"]\n[[],[1],[100],[3001],[3002]]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass RecentCounter {\n\n    public RecentCounter() {\n        \n    }\n    \n    public int ping(int t) {\n        \n    }\n}\n\n/**\n * Your RecentCounter object will be instantiated and called as such:\n * RecentCounter obj = new RecentCounter();\n * int param_1 = obj.ping(t);\n */\n"
+}

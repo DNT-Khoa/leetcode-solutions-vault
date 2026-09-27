@@ -240,6 +240,16 @@
       "attempts": 1,
       "firstSolved": "2026-09-26T18:11:51.990795+00:00",
       "lastAttempt": "2026-09-26T18:11:51.990795+00:00"
+    },
+    "number-of-recent-calls": {
+      "slug": "number-of-recent-calls",
+      "title": "Number of Recent Calls",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/number-of-recent-calls/",
+      "rating": "easy",
+      "attempts": 2,
+      "firstSolved": "2026-09-27T08:51:28.858140+00:00",
+      "lastAttempt": "2026-09-27T08:52:35.710378+00:00"
     }
   }
 }
