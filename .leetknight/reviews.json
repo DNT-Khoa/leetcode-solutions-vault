@@ -250,6 +250,16 @@
       "attempts": 2,
       "firstSolved": "2026-09-27T08:51:28.858140+00:00",
       "lastAttempt": "2026-09-27T08:52:35.710378+00:00"
+    },
+    "evaluate-division": {
+      "slug": "evaluate-division",
+      "title": "Evaluate Division",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/evaluate-division/",
+      "rating": "hard",
+      "attempts": 2,
+      "firstSolved": "2026-09-29T04:59:09.429542+00:00",
+      "lastAttempt": "2026-09-30T17:36:39.002961+00:00"
     }
   }
 }
