@@ -260,6 +260,16 @@
       "attempts": 2,
       "firstSolved": "2026-09-29T04:59:09.429542+00:00",
       "lastAttempt": "2026-09-30T17:36:39.002961+00:00"
+    },
+    "maximum-units-on-a-truck": {
+      "slug": "maximum-units-on-a-truck",
+      "title": "Maximum Units on a Truck",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/maximum-units-on-a-truck/",
+      "rating": "easy",
+      "attempts": 1,
+      "firstSolved": "2026-09-30T18:02:30.811881+00:00",
+      "lastAttempt": "2026-09-30T18:02:30.811881+00:00"
     }
   }
 }
