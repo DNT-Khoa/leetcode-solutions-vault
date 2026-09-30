@@ -5,44 +5,58 @@ import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-// Time:  O(Elog(V))
-// Space: O(V + E) for adjacency list
+// Time:  O(ELog(E))
+// Space: O(V + E) because shortest paths contains maximum V nodes and adjacency list contains maximum E edges
 
 class Solution {
     public int networkDelayTime(int[][] times, int n, int k) {
         // build adjacency list
-        Map<Integer, List<int[]>> adjacencyList = new HashMap<>();
-        for (int[] time : times) {
-            adjacencyList.computeIfAbsent(time[0], key -> new ArrayList<>()).add(new int[]{time[2], time[1]});
-        }
-
-        // run Dijkstra algorithm 
+        Map<Integer, List<int[]>> adjacencyList = buildAdjacencyList(times);
+        
+        // Run Dijkstra algorithm
+        PriorityQueue<int[]> pq = new PriorityQueue<>((n1, n2) -> Integer.compare(n1[0], n2[0]));
         Map<Integer, Integer> shortestPaths = new HashMap<>();
-        PriorityQueue<int[]> heap = new PriorityQueue<>((n1, n2) -> Integer.compare(n1[0], n2[0]));
-        heap.offer(new int[]{0, k});
 
-        while (!heap.isEmpty()) {
-            int[] current = heap.poll();
-            int w1 = current[0], n1 = current[1];
+        pq.offer(new int[]{0, k});
+        while (!pq.isEmpty()) {
+            int[] edge = pq.poll();
+            int weight1 = edge[0], node1 = edge[1];
 
-            if (shortestPaths.containsKey(n1)) continue;
-            shortestPaths.put(n1, w1);
+            if (shortestPaths.containsKey(node1)) continue;
+            shortestPaths.put(node1, weight1);
 
-            for (int[] edge : adjacencyList.getOrDefault(n1, new ArrayList<>())) {
-                int w2 = edge[0], n2 = edge[1];
-                if (!shortestPaths.containsKey(n2)) {
-                    heap.offer(new int[] {w1 + w2, n2});
+            List<int[]> neighbors = adjacencyList.get(node1);
+            if (neighbors != null) {
+                for (int[] neighbor : neighbors) {
+                    int weight2 = neighbor[1], node2 = neighbor[0];
+                    if (shortestPaths.containsKey(node2)) continue;
+
+                    pq.offer(new int[]{weight1 + weight2, node2});
                 }
             }
         }
 
-        // now loop through the shortest path and check the max values
-        if (shortestPaths.size() != n) return -1;
-        int result = -1;
-        for (int node : shortestPaths.keySet()) {
-            result = Math.max(result, shortestPaths.get(node));
+        // check if there's any node unreachable from k
+        for (int i = 1; i <= n; i++) {
+            if (!shortestPaths.containsKey(i)) return -1;
         }
 
-        return result;
+        // find min among shortestPaths
+        int res = 0;
+        for (int node : shortestPaths.keySet()) {
+            int weight = shortestPaths.get(node);
+            res = Math.max(res, weight);
+        }
+
+        return res;
+    }
+
+    Map<Integer, List<int[]>> buildAdjacencyList(int[][] times) {
+        Map<Integer, List<int[]>> adjacencyList = new HashMap<>();
+        for (int[] edge : times) {
+            int src = edge[0], target = edge[1], weight = edge[2];
+            adjacencyList.computeIfAbsent(src, k -> new ArrayList<>()).add(new int[]{target, weight});
+        }
+        return adjacencyList;
     }
 }
