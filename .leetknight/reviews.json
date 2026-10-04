@@ -270,6 +270,16 @@
       "attempts": 1,
       "firstSolved": "2026-09-30T18:02:30.811881+00:00",
       "lastAttempt": "2026-09-30T18:02:30.811881+00:00"
+    },
+    "reconstruct-itinerary": {
+      "slug": "reconstruct-itinerary",
+      "title": "Reconstruct Itinerary",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/reconstruct-itinerary/",
+      "rating": "hard",
+      "attempts": 1,
+      "firstSolved": "2026-10-04T15:48:15.682195+00:00",
+      "lastAttempt": "2026-10-04T15:48:15.682195+00:00"
     }
   }
 }
