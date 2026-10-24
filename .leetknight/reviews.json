@@ -300,6 +300,16 @@
       "attempts": 1,
       "firstSolved": "2026-10-21T12:14:12.855582+00:00",
       "lastAttempt": "2026-10-21T12:14:12.855582+00:00"
+    },
+    "coin-change": {
+      "slug": "coin-change",
+      "title": "Coin Change",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/coin-change/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-10-24T16:57:06.572763+00:00",
+      "lastAttempt": "2026-10-24T16:57:06.572763+00:00"
     }
   }
 }
