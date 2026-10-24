@@ -1,0 +1,9 @@
+{
+  "slug": "implement-trie-prefix-tree",
+  "title": "Implement Trie (Prefix Tree)",
+  "difficulty": "Medium",
+  "questionId": "208",
+  "url": "https://leetcode.com/problems/implement-trie-prefix-tree/",
+  "exampleTestcases": "[\"Trie\",\"insert\",\"search\",\"search\",\"startsWith\",\"insert\",\"search\"]\n[[],[\"apple\"],[\"apple\"],[\"app\"],[\"app\"],[\"app\"],[\"app\"]]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Trie {\n\n    public Trie() {\n        \n    }\n    \n    public void insert(String word) {\n        \n    }\n    \n    public boolean search(String word) {\n        \n    }\n    \n    public boolean startsWith(String prefix) {\n        \n    }\n}\n\n/**\n * Your Trie object will be instantiated and called as such:\n * Trie obj = new Trie();\n * obj.insert(word);\n * boolean param_2 = obj.search(word);\n * boolean param_3 = obj.startsWith(prefix);\n */\n"
+}
