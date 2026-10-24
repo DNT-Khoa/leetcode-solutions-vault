@@ -280,6 +280,26 @@
       "attempts": 1,
       "firstSolved": "2026-10-04T15:48:15.682195+00:00",
       "lastAttempt": "2026-10-04T15:48:15.682195+00:00"
+    },
+    "implement-trie-prefix-tree": {
+      "slug": "implement-trie-prefix-tree",
+      "title": "Implement Trie (Prefix Tree)",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/implement-trie-prefix-tree/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-10-21T11:22:35.178060+00:00",
+      "lastAttempt": "2026-10-21T11:22:35.178060+00:00"
+    },
+    "design-add-and-search-words-data-structure": {
+      "slug": "design-add-and-search-words-data-structure",
+      "title": "Design Add and Search Words Data Structure",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/design-add-and-search-words-data-structure/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-10-21T12:14:12.855582+00:00",
+      "lastAttempt": "2026-10-21T12:14:12.855582+00:00"
     }
   }
 }
