@@ -95,4 +95,5 @@ Without the seed, `map.get(null)` on a `HashMap` still returns `null` (absent-ke
 
 ## Problems for further practice
 
-- [copy-list-with-random-pointer](../../leetcode/copy-list-with-random-pointer/notes.md) — `Map<Node, Node>` where `Node.random` can be null. Combines identity-based node keys (each original instance → its own clone) with the `null → null` seeding trick so `map.get(orig.random)` handles both cases uniformly.
+- [LeetCode 138 — Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) — `Map<Node, Node>` where `Node.random` can be null. Combines identity-based node keys (each original instance → its own clone) with the `null → null` seeding trick so `map.get(orig.random)` handles both cases uniformly.
+- [clone-graph](../../clone-graph/notes.md) — the same original → clone map on a graph, where the map also acts as the visited set. This solution keys it by `node.val` (`Map<Integer, Node>`), which is only safe because values are unique in that problem; `Map<Node, Node>` works without that guarantee.

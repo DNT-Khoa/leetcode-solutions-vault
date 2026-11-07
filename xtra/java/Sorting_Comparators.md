@@ -1,6 +1,6 @@
 # Sorting and Comparators in Java
 
-How to sort collections and arrays in Java, with custom orderings via `Comparator`. Focused on the forms that actually come up in CP.
+How to sort collections and arrays in Java, with custom orderings via `Comparator`. Focused on the forms that actually come up in LeetCode problems.
 
 ## Contents
 
@@ -141,4 +141,4 @@ for (int i = 0, j = arr.length - 1; i < j; i++, j--) {
 
 ## Problems for further practice
 
-- [car-fleet](../../leetcode/car-fleet/notes.md) — sort cars by position descending with `Comparator.comparingInt(Car::position).reversed()`, then walk the sorted list to count fleets.
+- [LeetCode 853 — Car Fleet](https://leetcode.com/problems/car-fleet/) — sort cars by position descending with `Comparator.comparingInt(Car::position).reversed()`, then walk the sorted list to count fleets.

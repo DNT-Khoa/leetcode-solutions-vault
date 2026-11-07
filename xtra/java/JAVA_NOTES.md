@@ -1,6 +1,6 @@
 # Java Notes
 
-Language- and library-level notes for competitive programming in Java. These are about *how* to write code efficiently in Java, separate from algorithmic patterns (see [PATTERNS.md](PATTERNS.md)).
+Language- and library-level notes for solving LeetCode problems in Java. These are about *how* to write code efficiently in Java, separate from algorithmic patterns (see [algorithms/](../algorithms/) and [patterns/](../patterns/)).
 
 ## Contents
 
@@ -43,12 +43,14 @@ String s = sb.toString();   // one final copy
 
 ### When to reach for it
 
-- **Assembling one line / token sequence**: building a single output line from many pieces (numbers + delimiters) before printing it — the O(n²) reason above applies to that line. For *whole-program* output, don't accumulate; stream it (see [Stream output instead of accumulating it](#stream-output-instead-of-accumulating-it)). Accumulate the full output only to reorder/post-process it, or when the sink is unbuffered.
+- **Assembling a result string**: building the returned `String` from many pieces (words + separators, digits, path segments) — the O(n²) reason above applies whenever you'd otherwise `+=` in a loop.
 - **Mutating a string**: inserting, deleting, or replacing characters at specific positions (`sb.insert(i, c)`, `sb.deleteCharAt(i)`, `sb.setCharAt(i, c)`).
 - **Reversing a string**: `new StringBuilder(s).reverse().toString()`.
 - **Reading the string into a mutable form**: `StringBuilder sb = new StringBuilder(inputStr);` skips having to convert through `char[]` or `List<Character>`.
 
-Related problem: [204642F](codeforces/204642F/notes.md) — needed to insert/remove chars while testing palindromes.
+Related problems:
+- [LeetCode 1328 — Break a Palindrome](https://leetcode.com/problems/break-a-palindrome/) — change one character of a palindrome in place (`setCharAt`), then return the result.
+- [LeetCode 1047 — Remove All Adjacent Duplicates In String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/) — use the `StringBuilder` itself as a stack: `append` to push, `deleteCharAt(sb.length() - 1)` to pop.
 
 ## Picking the right integer type
 
@@ -92,11 +94,14 @@ Casting only the result — `(long)(a * b)` — does **not** work: the multiplic
 
 ### Parsing matches the type
 
-- `Integer.parseInt(s)` — throws `NumberFormatException` if `s` represents a value beyond INT_MAX (Codeforces reports this as Runtime Error).
+- `Integer.parseInt(s)` — throws `NumberFormatException` if `s` represents a value beyond INT_MAX (LeetCode reports this as Runtime Error).
 - `Long.parseLong(s)` — handles anything up to LONG_MAX.
 - `new BigInteger(s)` — for arbitrary-precision input.
 
-Related problem: [204642G](codeforces/204642G/notes.md) — input up to `10¹²` required switching from `int` to `long`.
+Related problems:
+- [LeetCode 69 — Sqrt(x)](https://leetcode.com/problems/sqrtx/) — `x` fits in `int`, but `mid * mid` doesn't: compute it as `(long) mid * mid`.
+- [LeetCode 875 — Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/) — each pile fits in `int`, but the total hours summed over up to `10⁴` piles of up to `10⁹` bananas needs `long`.
+- [LeetCode 8 — String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/) — you must detect overflow yourself while building the number, since the input can be far beyond `long`.
 
 ## Always-positive modulo
 
@@ -144,7 +149,10 @@ int wrapped = Math.floorMod(value, N); // always lands in 0 .. N-1
 
 Overflow note: in `(position - i + N) % N`, the intermediate `position - i + N` is an `int`. If `position` or `N` can reach ~10⁹ this addition overflows — do the arithmetic in `long` (see "Picking the right integer type"). For a small `N` like a lock dial, there's no risk.
 
-Related problem: [204642H](codeforces/204642H/notes.md) — circular combination lock.
+Related problems:
+- [LeetCode 752 — Open the Lock](https://leetcode.com/problems/open-the-lock/) — a 4-wheel lock with digits `0 … 9`; turning a wheel down is `(d - 1 + 10) % 10`.
+- [LeetCode 622 — Design Circular Queue](https://leetcode.com/problems/design-circular-queue/) — front and rear indices wrap around a fixed-size array.
+- [LeetCode 503 — Next Greater Element II](https://leetcode.com/problems/next-greater-element-ii/) — walk a circular array twice with `i % n`.
 
 ## Counting unique combinations with a `Set`
 
@@ -178,7 +186,10 @@ s.size();                 // 2, not 1 — silent wrong answer
 
 Use a `record` (value-based), a packed `long` (`Set<Long>`, for small bounded values), or `List<Integer>` (its `equals`/`hashCode` are content-based) instead.
 
-Related problem: [204642H](codeforces/204642H/notes.md) — union of valid lock combinations counted via `Set<Triple>`.
+Related problems:
+- [LeetCode 15 — 3Sum](https://leetcode.com/problems/3sum/) — sort each triplet, store it as `List.of(a, b, c)` in a `Set<List<Integer>>`, and the set removes the duplicates. Slower than skipping duplicates inline, but hard to get wrong.
+- [LeetCode 49 — Group Anagrams](https://leetcode.com/problems/group-anagrams/) — the canonical key is the word's sorted letters, so every anagram maps to the same key.
+- [subsets-ii](../../subsets-ii/notes.md), [permutations-ii](../../permutations-ii/notes.md), [combination-sum-ii](../../combination-sum-ii/notes.md) — the same "no duplicate results" requirement, solved by sorting and skipping instead; a `Set` of sorted lists is the fallback when the skip rule gets tricky.
 
 ## Value-based vs identity-based `equals`
 
@@ -217,6 +228,8 @@ A `Set<List<Integer>>` deduplicates triplets correctly when each triplet is stor
 
 ## Stream output instead of accumulating it
 
+> **LeetCode doesn't apply here:** it calls your method and checks the return value, so you never print the answer. This section is for **online assessments and stdin/stdout judges** (HackerRank, CodeSignal and similar), where you read input and print output yourself. On LeetCode, the returned collection *is* the output, and its size counts toward your space complexity — for [permutations](../../permutations/notes.md), the `N!` lists you return are already O(N · N!) memory that you can't avoid.
+
 `new PrintWriter(System.out)` **already wraps the stream in a `BufferedWriter`** (8 KB buffer) and does not autoflush. So writing each line the moment you produce it — `pw.println(line)` in a loop or at a recursion leaf — is *already* batched I/O: the buffer fills and flushes in big chunks, and one `pw.close()` at the end does the final flush.
 
 Collecting the whole output into a `StringBuilder` or `List<String>` first does **not** make it faster — the batching already happened. It only adds O(total output) memory on top of the buffer that's already there, plus a giant temporary `String` (`pw.print(sb)` does `String.valueOf(sb)` before writing).
@@ -238,8 +251,6 @@ for (int q = 0; q < queries; q++) {
 
 Concrete cost: "print all `N!` permutations" with an accumulator holds every line at once and runs out of memory (`OutOfMemoryError`, "OOM" for short) at `N = 10` (~3.6M lines) even under a 64 MB heap; the streaming version above stays at O(N) and runs fine. Reach for a full-output accumulator only when you must **reorder or post-process** everything before printing — never just to "print fast". If you emit in generation order, stream it.
 
-Related problem: [205012A](codeforces/205012A/notes.md) — the `StringBuilder` and `List<String>` versions OOM'd at `N = 10`; streaming straight to `pw` did not.
-
 ## `setLength` vs `deleteCharAt` for backtracking undo
 
 When undoing a `StringBuilder` append during backtracking, snapshot the length *before* appending and restore it after:
@@ -251,11 +262,17 @@ recurse();
 sb.setLength(mark);    // drops exactly what was added, whatever its length
 ```
 
-`sb.deleteCharAt(sb.length() - 1)` removes exactly **one** character. That only mirrors the append while every appended value is a single character. Append a two-digit number (10, 11, …), or a value plus a separator, and the undo removes too little — the buffer never unwinds, the path silently corrupts, and in the worst case it grows until OOM. `setLength(mark)` rewinds to a known-good point no matter how many characters the append produced, so it's the default undo for the mutate+undo style of the [backtracking pattern](PATTERNS.md#backtracking-one-template-the-choice-set-is-the-pattern).
+`sb.deleteCharAt(sb.length() - 1)` removes exactly **one** character. That only mirrors the append while every appended value is a single character. Append a two-digit number (10, 11, …), or a value plus a separator, and the undo removes too little — the buffer never unwinds and the path silently corrupts. `setLength(mark)` rewinds to a known-good point no matter how many characters the append produced, so it's the default undo for the mutate+undo style of the [backtracking template](../algorithms/Backtracking.md#1-the-template).
 
-Related problem: [205012A](codeforces/205012A/notes.md) — `deleteCharAt` passed for `N ≤ 9` but corrupted the path at `N ≥ 10` where values are two digits.
+Related problems:
+- [LeetCode 257 — Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/) — each step appends `"->"` plus a value that can be negative or several digits long, so `deleteCharAt` can't undo it.
+- [LeetCode 93 — Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/) — each choice appends a 1–3 digit segment plus a dot.
+- [LeetCode 282 — Expression Add Operators](https://leetcode.com/problems/expression-add-operators/) — appends an operator and a multi-digit number at each step.
+- [letter-combinations-of-a-phone-number](../../letter-combinations-of-a-phone-number/notes.md), [generate-parentheses](../../generate-parentheses/notes.md) — one character per step, so `deleteCharAt` happens to work here; `setLength` works too and keeps the habit consistent.
 
 ## Printing doubles: avoid scientific notation
+
+> **On LeetCode, a `double` answer is returned, not printed, and compared numerically** — so the format never matters there (e.g. [LeetCode 50 — Pow(x, n)](https://leetcode.com/problems/powx-n/)). It matters in two places: **online assessments and stdin/stdout judges** where you print the answer yourself, and **any time you turn a `double` into a `String`** (`String.valueOf(d)`, `"" + d`, `sb.append(d)`) as part of a string answer.
 
 When the answer is a `double`, print it with `printf`, **not** `println`:
 
@@ -266,7 +283,7 @@ pw.printf("%.6f%n", ans);   // 1000000000.000000
 
 ### Why `println` fails
 
-`System.out.println(double)` (and `String.valueOf(double)`) switch to **scientific notation** for values `≥ 10⁷` or `< 10⁻³`. So an answer of `1000000000.0` prints as `1.0E9`. Competitive judges read the answer with a strict real-number parser (Codeforces uses **testlib**, whose `readDouble` rejects the `E`), so a perfectly correct value gets marked wrong purely on format.
+`System.out.println(double)` (and `String.valueOf(double)`) switch to **scientific notation** for values `≥ 10⁷` or `< 10⁻³`. So an answer of `1000000000.0` prints as `1.0E9`. Many judges read the answer with a strict real-number parser that rejects the `E`, so a perfectly correct value gets marked wrong purely on format.
 
 The bug hides on small samples — `200.5` prints fine either way — and only surfaces when a test has a large answer.
 
@@ -278,7 +295,7 @@ The bug hides on small samples — `200.5` prints fine either way — and only s
 
 Match or exceed the problem's stated tolerance. `%.6f` rounds to 6 decimals, giving absolute error `≤ 5 × 10⁻⁷` — safe for the common "error `≤ 10⁻⁶`" requirement. Printing a couple extra digits (`%.9f`) costs nothing (the checker reads the value, not the digit count) and removes any doubt.
 
-Related problem: [283932B](codeforces/283932B/notes.md) — rope-cutting answer up to `10⁹` printed as `1.0E9` with `println`; `printf("%.6f%n", …)` fixed it. Pairs with the [binary search on doubles](PATTERNS.md#binary-search-on-doubles-fixed-loop-not-while) pattern.
+To build a `String` instead of printing, use `String.format("%.6f", d)` — the same format string without the `%n`.
 
 ## `boolean[]` vs `HashSet<Integer>` for dense-index membership
 
@@ -315,11 +332,13 @@ Same problem, same O(n·log n) algorithm, only the membership structure changed:
 | `HashSet<Integer>` | 1703 ms | 18200 KB |
 | `boolean[]` | 312 ms | 900 KB |
 
-On Codeforces this can be the whole difference between AC and TLE — two correct same-complexity solutions separated purely by constants.
+On LeetCode this can be the difference between Accepted and Time Limit Exceeded on tight problems, and it moves you a long way up the runtime percentile — two correct same-complexity solutions separated purely by constants.
 
 One gotcha when you allocate the `boolean[]` inside a function called many times (e.g. each binary-search probe): a fresh `new boolean[n]` per call is fine for correctness but adds an O(n) allocation each time. If it's hot, allocate once outside and reset only the slots you set.
 
-Related problem: [283932F](codeforces/283932F/notes.md) — `canDelete` membership test; `HashSet<Integer>` → `boolean[]` took it from 1703 ms to 312 ms. Pairs with the [binary search on the answer](PATTERNS.md) pattern.
+Related problems:
+- [LeetCode 1898 — Maximum Number of Removable Characters](https://leetcode.com/problems/maximum-number-of-removable-characters/) — binary search on how many characters to remove; each probe marks the removed indices, which is exactly this `boolean[]` vs `HashSet<Integer>` choice. Pairs with [binary search on the answer](../algorithms/Binary_Search_Boundary.md).
+- [LeetCode 41 — First Missing Positive](https://leetcode.com/problems/first-missing-positive/) — values that matter are `1 … n`, so a `boolean[n + 1]` replaces a set (the follow-up then removes even that by reusing the input array).
 
 ## Converting a `List<T>` to a `T[]` array
 
@@ -351,7 +370,8 @@ Old Java advice was to pre-size (`new T[list.size()]`) to skip the allocation. M
 
 Rule of thumb: **always `list.toArray(new T[0])`**.
 
-Related problem: [merge-k-sorted-lists](../../leetcode/merge-k-sorted-lists/notes.md) — bottom-up merge that rebuilds a `ListNode[]` from an `ArrayList` between rounds.
+Related problems:
+- [LeetCode 23 — Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) — bottom-up merge that rebuilds a `ListNode[]` from an `ArrayList` between rounds.
 
 ## Converting a `T[]` array to a `List<T>`
 

@@ -82,7 +82,7 @@ int size = pq.size();
 | Remove   | `remove()`   | `poll()`         |
 | Peek     | `element()`  | `peek()`         |
 
-Prefer the sentinel-returning column in CP — null is easier to check than catching exceptions. (`offer` and `add` are effectively identical for `PriorityQueue` since it grows on demand.)
+Prefer the sentinel-returning column in LeetCode solutions — null is easier to check than catching exceptions. (`offer` and `add` are effectively identical for `PriorityQueue` since it grows on demand.)
 
 ### Max-heap
 

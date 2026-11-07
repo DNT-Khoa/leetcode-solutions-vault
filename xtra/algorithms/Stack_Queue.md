@@ -15,7 +15,7 @@ Tricks for augmenting stacks and queues so they answer running queries (min, max
 
 ## Java implementations
 
-For CP, use `ArrayDeque<E>` for both stack and queue roles. It's a backing array with O(1) amortized add/remove at either end, and it implements both `Deque<E>` and `Queue<E>`.
+On LeetCode, use `ArrayDeque<E>` for both stack and queue roles. It's a backing array with O(1) amortized add/remove at either end, and it implements both `Deque<E>` and `Queue<E>`.
 
 ### As a stack
 
@@ -73,7 +73,7 @@ Each operation has a throwing flavor and a sentinel-returning flavor. Stack mode
 | Dequeue    | `remove()`  | `poll()`         |
 | Peek front | `element()` | `peek()`         |
 
-In CP, prefer the right column — null-checking is simpler than try/catch. (For `ArrayDeque`, insert never actually fails since it auto-grows; the distinction only matters for remove/examine.)
+In LeetCode solutions, prefer the right column — null-checking is simpler than try/catch. (For `ArrayDeque`, insert never actually fails since it auto-grows; the distinction only matters for remove/examine.)
 
 **Fully sentinel-returning stack:** the standard `push` / `pop` methods throw. To avoid that, declare the variable as `Deque<E>` (not `Queue<E>` — which doesn't expose `offerFirst` / `pollFirst`) and use those instead.
 
@@ -363,4 +363,3 @@ Space: O(K) — the deque holds at most one index per active window slot.
 - [LeetCode 2398 — Maximum Number of Robots Within Budget](https://leetcode.com/problems/maximum-number-of-robots-within-budget/) — variable-size window where the constraint combines window max and window sum.
 - [LeetCode 1696 — Jump Game VI](https://leetcode.com/problems/jump-game-vi/) — DP where each `dp[i]` needs the max of the previous `k` dp values; sliding window max as a DP accelerator.
 - [LeetCode 1425 — Constrained Subsequence Sum](https://leetcode.com/problems/constrained-subsequence-sum/) — same DP-accelerator pattern as 1696.
-- [Codeforces EDU 307093F — Segments with Small Spread](https://codeforces.com/edu/course/2/lesson/9/2/practice/contest/307093/problem/F) — count segments with `max − min ≤ k`.

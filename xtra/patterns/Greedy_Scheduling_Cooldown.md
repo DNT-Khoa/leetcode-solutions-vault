@@ -71,7 +71,7 @@ Let `N` = total items, `k` = distinct item types, `T` = final answer.
 
 ## Sibling problems
 
-- **[Task Scheduler](https://leetcode.com/problems/task-scheduler/)** (LC 621) — the canonical version. See [leetcode/task-scheduler/](../../leetcode/task-scheduler/).
+- **[Task Scheduler](https://leetcode.com/problems/task-scheduler/)** (LC 621) — the canonical version.
 - **[Reorganize String](https://leetcode.com/problems/reorganize-string/)** (LC 767) — cooldown = 1; produce a valid string instead of counting ticks.
 - **[Rearrange String k Distance Apart](https://leetcode.com/problems/rearrange-string-k-distance-apart/)** (LC 358) — cooldown = k. Direct generalization.
 - **[Distant Barcodes](https://leetcode.com/problems/distant-barcodes/)** (LC 1054) — cooldown = 1, integers instead of chars.
