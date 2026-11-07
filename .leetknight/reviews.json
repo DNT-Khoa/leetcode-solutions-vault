@@ -337,9 +337,19 @@
       "difficulty": "Medium",
       "url": "https://leetcode.com/problems/reorder-data-in-log-files/",
       "rating": "medium",
-      "attempts": 2,
+      "attempts": 3,
       "firstSolved": "2026-11-07T13:04:47.594015+00:00",
-      "lastAttempt": "2026-11-07T13:19:37.947062+00:00"
+      "lastAttempt": "2026-11-07T13:20:53.428169+00:00"
+    },
+    "validate-ip-address": {
+      "slug": "validate-ip-address",
+      "title": "Validate IP Address",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/validate-ip-address/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-11-07T21:25:46.462714+00:00",
+      "lastAttempt": "2026-11-07T21:25:46.462714+00:00"
     }
   }
 }
