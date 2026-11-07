@@ -330,6 +330,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-07T10:34:26.394880+00:00",
       "lastAttempt": "2026-11-07T10:34:26.394880+00:00"
+    },
+    "reorder-data-in-log-files": {
+      "slug": "reorder-data-in-log-files",
+      "title": "Reorder Data in Log Files",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/reorder-data-in-log-files/",
+      "rating": "medium",
+      "attempts": 2,
+      "firstSolved": "2026-11-07T13:04:47.594015+00:00",
+      "lastAttempt": "2026-11-07T13:19:37.947062+00:00"
     }
   }
 }

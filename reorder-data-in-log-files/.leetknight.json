@@ -1,0 +1,9 @@
+{
+  "slug": "reorder-data-in-log-files",
+  "title": "Reorder Data in Log Files",
+  "difficulty": "Medium",
+  "questionId": "974",
+  "url": "https://leetcode.com/problems/reorder-data-in-log-files/",
+  "exampleTestcases": "[\"0 pmz\", \"4 q j\", \"g 89\", \"t v p\", \"w ugr\"]\n[\"2 08\", \"f 09\", \"v wc\", \"o z c\", \"u 14\"]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public String[] reorderLogFiles(String[] logs) {\n        \n    }\n}\n"
+}
