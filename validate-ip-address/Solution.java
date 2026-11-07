@@ -2,42 +2,23 @@
 import java.util.regex.Pattern;
 
 // Time:  O(N) where N is the number of characters in queryIP
-// Space: O(N)
+// Space: O(1)
 
 class Solution {
+    static final String X_IPV4 = "([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])";
+    static final Pattern PATTERN_IPV4 = Pattern.compile("(" + X_IPV4 + "\\.){3}" + X_IPV4);
+    static final String X_IPV6 = "([0-9a-fA-F]{1,4})";
+    static final Pattern PATTERN_IPV6 = Pattern.compile("(" + X_IPV6 + ":){7}" + X_IPV6);
 
     public String validIPAddress(String queryIP) {
-        if (isIpV4(queryIP)) {
+        if (PATTERN_IPV4.matcher(queryIP).matches()) {
             return "IPv4";
         }
 
-        if (isIpV6(queryIP)) {
+        if (PATTERN_IPV6.matcher(queryIP).matches()) {
             return "IPv6";
         }
 
         return "Neither";
-    }
-
-    private boolean isIpV4(String queryIP) {
-        Pattern pattern = Pattern.compile("0|[1-9][0-9]{0,2}");
-        String[] splitted = queryIP.split("\\.", -1);
-        if (splitted.length != 4) return false;
-
-        for (String x : splitted) {
-            if (!pattern.matcher(x).matches() || Integer.parseInt(x) > 255) return false;
-        }
-
-        return true;
-    }
-
-    private boolean isIpV6(String queryIP) {
-        Pattern pattern = Pattern.compile("[0-9a-fA-F]{1,4}");
-        String[] splitted = queryIP.split(":", -1);
-        if (splitted.length != 8) return false;
-
-        for (String x : splitted) {
-            if (!pattern.matcher(x).matches()) return false;
-        }
-        return true;
     }
 }
