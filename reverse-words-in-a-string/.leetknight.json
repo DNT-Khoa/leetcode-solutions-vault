@@ -1,0 +1,9 @@
+{
+  "slug": "reverse-words-in-a-string",
+  "title": "Reverse Words in a String",
+  "difficulty": "Medium",
+  "questionId": "151",
+  "url": "https://leetcode.com/problems/reverse-words-in-a-string/",
+  "exampleTestcases": "\"the sky is blue\"\n\"  hello world  \"\n\"a good   example\"",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public String reverseWords(String s) {\n        \n    }\n}\n"
+}
