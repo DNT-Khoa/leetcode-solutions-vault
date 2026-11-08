@@ -360,6 +360,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-08T19:47:05.774683+00:00",
       "lastAttempt": "2026-11-08T19:47:05.774683+00:00"
+    },
+    "top-k-frequent-elements": {
+      "slug": "top-k-frequent-elements",
+      "title": "Top K Frequent Elements",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/top-k-frequent-elements/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-11-08T20:24:30.942659+00:00",
+      "lastAttempt": "2026-11-08T20:24:30.942659+00:00"
     }
   }
 }
