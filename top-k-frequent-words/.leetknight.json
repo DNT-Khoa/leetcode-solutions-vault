@@ -1,0 +1,9 @@
+{
+  "slug": "top-k-frequent-words",
+  "title": "Top K Frequent Words",
+  "difficulty": "Medium",
+  "questionId": "692",
+  "url": "https://leetcode.com/problems/top-k-frequent-words/",
+  "exampleTestcases": "[\"i\",\"love\",\"leetcode\",\"i\",\"love\",\"coding\"]\n2\n[\"the\",\"day\",\"is\",\"sunny\",\"the\",\"the\",\"the\",\"sunny\",\"is\",\"is\"]\n4",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public List<String> topKFrequent(String[] words, int k) {\n        \n    }\n}\n"
+}
