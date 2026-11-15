@@ -400,6 +400,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-15T13:05:10.810468+00:00",
       "lastAttempt": "2026-11-15T13:05:10.810468+00:00"
+    },
+    "k-closest-points-to-origin": {
+      "slug": "k-closest-points-to-origin",
+      "title": "K Closest Points to Origin",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/k-closest-points-to-origin/",
+      "rating": "easy",
+      "attempts": 1,
+      "firstSolved": "2026-11-15T16:50:29.962635+00:00",
+      "lastAttempt": "2026-11-15T16:50:29.962635+00:00"
     }
   }
 }
