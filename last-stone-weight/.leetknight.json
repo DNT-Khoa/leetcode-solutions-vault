@@ -1,0 +1,9 @@
+{
+  "slug": "last-stone-weight",
+  "title": "Last Stone Weight",
+  "difficulty": "Easy",
+  "questionId": "1127",
+  "url": "https://leetcode.com/problems/last-stone-weight/",
+  "exampleTestcases": "[2,7,4,1,8,1]\n[1]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public int lastStoneWeight(int[] stones) {\n        \n    }\n}\n"
+}

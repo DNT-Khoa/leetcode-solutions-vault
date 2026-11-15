@@ -390,6 +390,16 @@
       "attempts": 2,
       "firstSolved": "2026-11-15T12:40:32.739635+00:00",
       "lastAttempt": "2026-11-15T12:41:36.585541+00:00"
+    },
+    "last-stone-weight": {
+      "slug": "last-stone-weight",
+      "title": "Last Stone Weight",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/last-stone-weight/",
+      "rating": "easy",
+      "attempts": 1,
+      "firstSolved": "2026-11-15T13:05:10.810468+00:00",
+      "lastAttempt": "2026-11-15T13:05:10.810468+00:00"
     }
   }
 }
