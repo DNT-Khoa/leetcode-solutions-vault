@@ -410,6 +410,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-15T16:50:29.962635+00:00",
       "lastAttempt": "2026-11-15T16:50:29.962635+00:00"
+    },
+    "kth-largest-element-in-an-array": {
+      "slug": "kth-largest-element-in-an-array",
+      "title": "Kth Largest Element in an Array",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+      "rating": "easy",
+      "attempts": 1,
+      "firstSolved": "2026-11-15T16:56:51.784170+00:00",
+      "lastAttempt": "2026-11-15T16:56:51.784170+00:00"
     }
   }
 }

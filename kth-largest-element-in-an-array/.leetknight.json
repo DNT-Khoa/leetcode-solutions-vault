@@ -1,0 +1,9 @@
+{
+  "slug": "kth-largest-element-in-an-array",
+  "title": "Kth Largest Element in an Array",
+  "difficulty": "Medium",
+  "questionId": "215",
+  "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+  "exampleTestcases": "[3,2,1,5,6,4]\n2\n[3,2,3,1,2,4,5,5,6]\n4",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public int findKthLargest(int[] nums, int k) {\n        \n    }\n}\n"
+}
