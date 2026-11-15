@@ -387,9 +387,9 @@
       "difficulty": "Easy",
       "url": "https://leetcode.com/problems/kth-largest-element-in-a-stream/",
       "rating": "easy",
-      "attempts": 1,
+      "attempts": 2,
       "firstSolved": "2026-11-15T12:40:32.739635+00:00",
-      "lastAttempt": "2026-11-15T12:40:32.739635+00:00"
+      "lastAttempt": "2026-11-15T12:41:36.585541+00:00"
     }
   }
 }
