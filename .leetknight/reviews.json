@@ -380,6 +380,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-15T11:45:04.674918+00:00",
       "lastAttempt": "2026-11-15T11:45:04.674918+00:00"
+    },
+    "kth-largest-element-in-a-stream": {
+      "slug": "kth-largest-element-in-a-stream",
+      "title": "Kth Largest Element in a Stream",
+      "difficulty": "Easy",
+      "url": "https://leetcode.com/problems/kth-largest-element-in-a-stream/",
+      "rating": "easy",
+      "attempts": 1,
+      "firstSolved": "2026-11-15T12:40:32.739635+00:00",
+      "lastAttempt": "2026-11-15T12:40:32.739635+00:00"
     }
   }
 }

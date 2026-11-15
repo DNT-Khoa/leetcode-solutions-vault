@@ -1,0 +1,9 @@
+{
+  "slug": "kth-largest-element-in-a-stream",
+  "title": "Kth Largest Element in a Stream",
+  "difficulty": "Easy",
+  "questionId": "789",
+  "url": "https://leetcode.com/problems/kth-largest-element-in-a-stream/",
+  "exampleTestcases": "[\"KthLargest\",\"add\",\"add\",\"add\",\"add\",\"add\"]\n[[3,[4,5,8,2]],[3],[5],[10],[9],[4]]\n[\"KthLargest\",\"add\",\"add\",\"add\",\"add\"]\n[[4,[7,7,7,7,8,3]],[2],[10],[9],[9]]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass KthLargest {\n\n    public KthLargest(int k, int[] nums) {\n        \n    }\n    \n    public int add(int val) {\n        \n    }\n}\n\n/**\n * Your KthLargest object will be instantiated and called as such:\n * KthLargest obj = new KthLargest(k, nums);\n * int param_1 = obj.add(val);\n */\n"
+}
