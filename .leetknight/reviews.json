@@ -370,6 +370,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-08T20:24:30.942659+00:00",
       "lastAttempt": "2026-11-08T20:24:30.942659+00:00"
+    },
+    "word-search-ii": {
+      "slug": "word-search-ii",
+      "title": "Word Search II",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/word-search-ii/",
+      "rating": "hard",
+      "attempts": 1,
+      "firstSolved": "2026-11-15T11:45:04.674918+00:00",
+      "lastAttempt": "2026-11-15T11:45:04.674918+00:00"
     }
   }
 }
