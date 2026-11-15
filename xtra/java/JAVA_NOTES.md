@@ -1,6 +1,6 @@
 # Java Notes
 
-Language- and library-level notes for solving LeetCode problems in Java. These are about *how* to write code efficiently in Java, separate from algorithmic patterns (see [algorithms/](../algorithms/) and [patterns/](../patterns/)).
+Language- and library-level notes for solving LeetCode problems in Java. These are about *how* to write code efficiently in Java, separate from algorithmic patterns (see [dsa/](../dsa/)).
 
 ## Contents
 
@@ -262,7 +262,7 @@ recurse();
 sb.setLength(mark);    // drops exactly what was added, whatever its length
 ```
 
-`sb.deleteCharAt(sb.length() - 1)` removes exactly **one** character. That only mirrors the append while every appended value is a single character. Append a two-digit number (10, 11, …), or a value plus a separator, and the undo removes too little — the buffer never unwinds and the path silently corrupts. `setLength(mark)` rewinds to a known-good point no matter how many characters the append produced, so it's the default undo for the mutate+undo style of the [backtracking template](../algorithms/Backtracking.md#1-the-template).
+`sb.deleteCharAt(sb.length() - 1)` removes exactly **one** character. That only mirrors the append while every appended value is a single character. Append a two-digit number (10, 11, …), or a value plus a separator, and the undo removes too little — the buffer never unwinds and the path silently corrupts. `setLength(mark)` rewinds to a known-good point no matter how many characters the append produced, so it's the default undo for the mutate+undo style of the [backtracking template](../dsa/Backtracking.md#1-the-template).
 
 Related problems:
 - [LeetCode 257 — Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/) — each step appends `"->"` plus a value that can be negative or several digits long, so `deleteCharAt` can't undo it.
@@ -337,7 +337,7 @@ On LeetCode this can be the difference between Accepted and Time Limit Exceeded 
 One gotcha when you allocate the `boolean[]` inside a function called many times (e.g. each binary-search probe): a fresh `new boolean[n]` per call is fine for correctness but adds an O(n) allocation each time. If it's hot, allocate once outside and reset only the slots you set.
 
 Related problems:
-- [LeetCode 1898 — Maximum Number of Removable Characters](https://leetcode.com/problems/maximum-number-of-removable-characters/) — binary search on how many characters to remove; each probe marks the removed indices, which is exactly this `boolean[]` vs `HashSet<Integer>` choice. Pairs with [binary search on the answer](../algorithms/Binary_Search_Boundary.md).
+- [LeetCode 1898 — Maximum Number of Removable Characters](https://leetcode.com/problems/maximum-number-of-removable-characters/) — binary search on how many characters to remove; each probe marks the removed indices, which is exactly this `boolean[]` vs `HashSet<Integer>` choice. Pairs with [binary search on the answer](../dsa/Binary_Search_Boundary.md).
 - [LeetCode 41 — First Missing Positive](https://leetcode.com/problems/first-missing-positive/) — values that matter are `1 … n`, so a `boolean[n + 1]` replaces a set (the follow-up then removes even that by reusing the input array).
 
 ## Converting a `List<T>` to a `T[]` array
