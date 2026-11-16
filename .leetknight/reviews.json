@@ -420,6 +420,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-15T16:56:51.784170+00:00",
       "lastAttempt": "2026-11-15T16:56:51.784170+00:00"
+    },
+    "task-scheduler": {
+      "slug": "task-scheduler",
+      "title": "Task Scheduler",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/task-scheduler/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-11-16T19:31:02.799740+00:00",
+      "lastAttempt": "2026-11-16T19:31:02.799740+00:00"
     }
   }
 }

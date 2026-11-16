@@ -1,0 +1,9 @@
+{
+  "slug": "task-scheduler",
+  "title": "Task Scheduler",
+  "difficulty": "Medium",
+  "questionId": "621",
+  "url": "https://leetcode.com/problems/task-scheduler/",
+  "exampleTestcases": "[\"A\",\"A\",\"A\",\"B\",\"B\",\"B\"]\n2\n[\"A\",\"C\",\"A\",\"B\",\"D\",\"B\"]\n1\n[\"A\",\"A\",\"A\", \"B\",\"B\",\"B\"]\n3",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public int leastInterval(char[] tasks, int n) {\n        \n    }\n}\n"
+}
