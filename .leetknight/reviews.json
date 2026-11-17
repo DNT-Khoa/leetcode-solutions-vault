@@ -440,6 +440,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-17T05:45:24.049986+00:00",
       "lastAttempt": "2026-11-17T05:45:24.049986+00:00"
+    },
+    "find-median-from-data-stream": {
+      "slug": "find-median-from-data-stream",
+      "title": "Find Median from Data Stream",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/find-median-from-data-stream/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-11-17T19:20:12.939799+00:00",
+      "lastAttempt": "2026-11-17T19:20:12.939799+00:00"
     }
   }
 }
