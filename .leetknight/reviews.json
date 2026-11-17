@@ -427,9 +427,19 @@
       "difficulty": "Medium",
       "url": "https://leetcode.com/problems/task-scheduler/",
       "rating": "medium",
-      "attempts": 1,
+      "attempts": 2,
       "firstSolved": "2026-11-16T19:31:02.799740+00:00",
-      "lastAttempt": "2026-11-16T19:31:02.799740+00:00"
+      "lastAttempt": "2026-11-16T19:37:03.315790+00:00"
+    },
+    "design-twitter": {
+      "slug": "design-twitter",
+      "title": "Design Twitter",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/design-twitter/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-11-17T05:45:24.049986+00:00",
+      "lastAttempt": "2026-11-17T05:45:24.049986+00:00"
     }
   }
 }

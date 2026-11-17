@@ -1,0 +1,9 @@
+{
+  "slug": "design-twitter",
+  "title": "Design Twitter",
+  "difficulty": "Medium",
+  "questionId": "355",
+  "url": "https://leetcode.com/problems/design-twitter/",
+  "exampleTestcases": "[\"Twitter\",\"postTweet\",\"getNewsFeed\",\"follow\",\"postTweet\",\"getNewsFeed\",\"unfollow\",\"getNewsFeed\"]\n[[],[1,5],[1],[1,2],[2,6],[1],[1,2],[1]]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Twitter {\n\n    public Twitter() {\n        \n    }\n    \n    public void postTweet(int userId, int tweetId) {\n        \n    }\n    \n    public List<Integer> getNewsFeed(int userId) {\n        \n    }\n    \n    public void follow(int followerId, int followeeId) {\n        \n    }\n    \n    public void unfollow(int followerId, int followeeId) {\n        \n    }\n}\n\n/**\n * Your Twitter object will be instantiated and called as such:\n * Twitter obj = new Twitter();\n * obj.postTweet(userId,tweetId);\n * List<Integer> param_2 = obj.getNewsFeed(userId);\n * obj.follow(followerId,followeeId);\n * obj.unfollow(followerId,followeeId);\n */\n"
+}
