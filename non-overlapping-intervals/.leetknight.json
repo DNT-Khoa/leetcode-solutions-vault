@@ -1,0 +1,9 @@
+{
+  "slug": "non-overlapping-intervals",
+  "title": "Non-overlapping Intervals",
+  "difficulty": "Medium",
+  "questionId": "435",
+  "url": "https://leetcode.com/problems/non-overlapping-intervals/",
+  "exampleTestcases": "[[1,2],[2,3],[3,4],[1,3]]\n[[1,2],[1,2],[1,2]]\n[[1,2],[2,3]]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public int eraseOverlapIntervals(int[][] intervals) {\n        \n    }\n}\n"
+}
