@@ -450,6 +450,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-17T19:20:12.939799+00:00",
       "lastAttempt": "2026-11-17T19:20:12.939799+00:00"
+    },
+    "insert-interval": {
+      "slug": "insert-interval",
+      "title": "Insert Interval",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/insert-interval/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-11-18T07:31:31.018013+00:00",
+      "lastAttempt": "2026-11-18T07:31:31.018013+00:00"
     }
   }
 }
