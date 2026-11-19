@@ -1,0 +1,9 @@
+{
+  "slug": "minimum-interval-to-include-each-query",
+  "title": "Minimum Interval to Include Each Query",
+  "difficulty": "Hard",
+  "questionId": "1977",
+  "url": "https://leetcode.com/problems/minimum-interval-to-include-each-query/",
+  "exampleTestcases": "[[1,4],[2,4],[3,6],[4,4]]\n[2,3,4,5]\n[[2,3],[2,5],[1,8],[20,25]]\n[2,19,5,22]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public int[] minInterval(int[][] intervals, int[] queries) {\n        \n    }\n}\n"
+}

@@ -480,6 +480,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-18T19:26:43.903259+00:00",
       "lastAttempt": "2026-11-18T19:26:43.903259+00:00"
+    },
+    "minimum-interval-to-include-each-query": {
+      "slug": "minimum-interval-to-include-each-query",
+      "title": "Minimum Interval to Include Each Query",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/minimum-interval-to-include-each-query/",
+      "rating": "hard",
+      "attempts": 1,
+      "firstSolved": "2026-11-19T18:05:15.424613+00:00",
+      "lastAttempt": "2026-11-19T18:05:15.424613+00:00"
     }
   }
 }
