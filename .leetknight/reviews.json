@@ -490,6 +490,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-19T18:05:15.424613+00:00",
       "lastAttempt": "2026-11-19T18:05:15.424613+00:00"
+    },
+    "maximum-subarray": {
+      "slug": "maximum-subarray",
+      "title": "Maximum Subarray",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/maximum-subarray/",
+      "rating": "easy",
+      "attempts": 1,
+      "firstSolved": "2026-11-20T06:07:34.877968+00:00",
+      "lastAttempt": "2026-11-20T06:07:34.877968+00:00"
     }
   }
 }
