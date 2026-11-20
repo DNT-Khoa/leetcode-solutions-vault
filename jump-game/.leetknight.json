@@ -1,0 +1,9 @@
+{
+  "slug": "jump-game",
+  "title": "Jump Game",
+  "difficulty": "Medium",
+  "questionId": "55",
+  "url": "https://leetcode.com/problems/jump-game/",
+  "exampleTestcases": "[2,3,1,1,4]\n[3,2,1,0,4]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public boolean canJump(int[] nums) {\n        \n    }\n}\n"
+}

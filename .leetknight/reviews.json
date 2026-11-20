@@ -500,6 +500,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-20T06:07:34.877968+00:00",
       "lastAttempt": "2026-11-20T06:07:34.877968+00:00"
+    },
+    "jump-game": {
+      "slug": "jump-game",
+      "title": "Jump Game",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/jump-game/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-11-20T06:46:00.678247+00:00",
+      "lastAttempt": "2026-11-20T06:46:00.678247+00:00"
     }
   }
 }
