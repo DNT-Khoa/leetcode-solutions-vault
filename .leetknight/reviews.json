@@ -510,6 +510,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-20T06:46:00.678247+00:00",
       "lastAttempt": "2026-11-20T06:46:00.678247+00:00"
+    },
+    "jump-game-ii": {
+      "slug": "jump-game-ii",
+      "title": "Jump Game II",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/jump-game-ii/",
+      "rating": "medium",
+      "attempts": 2,
+      "firstSolved": "2026-11-20T17:44:17.974100+00:00",
+      "lastAttempt": "2026-11-20T18:23:54.363355+00:00"
     }
   }
 }

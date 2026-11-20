@@ -1,0 +1,9 @@
+{
+  "slug": "jump-game-ii",
+  "title": "Jump Game II",
+  "difficulty": "Medium",
+  "questionId": "45",
+  "url": "https://leetcode.com/problems/jump-game-ii/",
+  "exampleTestcases": "[2,3,1,1,4]\n[2,3,0,1,4]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public int jump(int[] nums) {\n        \n    }\n}\n"
+}
