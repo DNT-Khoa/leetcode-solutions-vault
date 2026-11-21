@@ -1,0 +1,9 @@
+{
+  "slug": "hand-of-straights",
+  "title": "Hand of Straights",
+  "difficulty": "Medium",
+  "questionId": "876",
+  "url": "https://leetcode.com/problems/hand-of-straights/",
+  "exampleTestcases": "[1,2,3,6,2,3,4,7,8]\n3\n[1,2,3,4,5]\n4",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public boolean isNStraightHand(int[] hand, int groupSize) {\n        \n    }\n}\n"
+}

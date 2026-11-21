@@ -530,6 +530,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-21T10:18:59.614482+00:00",
       "lastAttempt": "2026-11-21T10:18:59.614482+00:00"
+    },
+    "hand-of-straights": {
+      "slug": "hand-of-straights",
+      "title": "Hand of Straights",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/hand-of-straights/",
+      "rating": "easy",
+      "attempts": 1,
+      "firstSolved": "2026-11-21T13:35:10.384824+00:00",
+      "lastAttempt": "2026-11-21T13:35:10.384824+00:00"
     }
   }
 }
