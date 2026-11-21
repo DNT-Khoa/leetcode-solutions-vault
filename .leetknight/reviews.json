@@ -560,6 +560,16 @@
       "attempts": 2,
       "firstSolved": "2026-11-21T17:21:29.651101+00:00",
       "lastAttempt": "2026-11-21T17:33:19.421838+00:00"
+    },
+    "valid-parenthesis-string": {
+      "slug": "valid-parenthesis-string",
+      "title": "Valid Parenthesis String",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/valid-parenthesis-string/",
+      "rating": "hard",
+      "attempts": 1,
+      "firstSolved": "2026-11-21T19:22:15.064818+00:00",
+      "lastAttempt": "2026-11-21T19:22:15.064818+00:00"
     }
   }
 }

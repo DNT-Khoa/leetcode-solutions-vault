@@ -1,0 +1,9 @@
+{
+  "slug": "valid-parenthesis-string",
+  "title": "Valid Parenthesis String",
+  "difficulty": "Medium",
+  "questionId": "678",
+  "url": "https://leetcode.com/problems/valid-parenthesis-string/",
+  "exampleTestcases": "\"()\"\n\"(*)\"\n\"(*))\"\n\"(\"",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public boolean checkValidString(String s) {\n        \n    }\n}\n"
+}
