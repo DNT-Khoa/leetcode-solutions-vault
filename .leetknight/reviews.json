@@ -520,6 +520,16 @@
       "attempts": 2,
       "firstSolved": "2026-11-20T17:44:17.974100+00:00",
       "lastAttempt": "2026-11-20T18:23:54.363355+00:00"
+    },
+    "gas-station": {
+      "slug": "gas-station",
+      "title": "Gas Station",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/gas-station/",
+      "rating": "hard",
+      "attempts": 1,
+      "firstSolved": "2026-11-21T10:18:59.614482+00:00",
+      "lastAttempt": "2026-11-21T10:18:59.614482+00:00"
     }
   }
 }

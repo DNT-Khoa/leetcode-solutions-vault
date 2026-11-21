@@ -1,0 +1,9 @@
+{
+  "slug": "gas-station",
+  "title": "Gas Station",
+  "difficulty": "Medium",
+  "questionId": "134",
+  "url": "https://leetcode.com/problems/gas-station/",
+  "exampleTestcases": "[1,2,3,4,5]\n[3,4,5,1,2]\n[2,3,4]\n[3,4,3]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public int canCompleteCircuit(int[] gas, int[] cost) {\n        \n    }\n}\n"
+}
