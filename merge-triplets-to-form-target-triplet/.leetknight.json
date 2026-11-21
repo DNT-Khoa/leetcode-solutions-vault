@@ -1,0 +1,9 @@
+{
+  "slug": "merge-triplets-to-form-target-triplet",
+  "title": "Merge Triplets to Form Target Triplet",
+  "difficulty": "Medium",
+  "questionId": "2026",
+  "url": "https://leetcode.com/problems/merge-triplets-to-form-target-triplet/",
+  "exampleTestcases": "[[2,5,3],[1,8,4],[1,7,5]]\n[2,7,5]\n[[3,4,5],[4,5,6]]\n[3,2,5]\n[[2,5,3],[2,3,4],[1,2,5],[5,2,3]]\n[5,5,5]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public boolean mergeTriplets(int[][] triplets, int[] target) {\n        \n    }\n}\n"
+}
