@@ -1,0 +1,9 @@
+{
+  "slug": "partition-labels",
+  "title": "Partition Labels",
+  "difficulty": "Medium",
+  "questionId": "768",
+  "url": "https://leetcode.com/problems/partition-labels/",
+  "exampleTestcases": "\"ababcbacadefegdehijhklij\"\n\"eccbbbbdec\"",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public List<Integer> partitionLabels(String s) {\n        \n    }\n}\n"
+}

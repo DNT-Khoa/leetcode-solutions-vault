@@ -550,6 +550,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-21T16:33:34.114496+00:00",
       "lastAttempt": "2026-11-21T16:33:34.114496+00:00"
+    },
+    "partition-labels": {
+      "slug": "partition-labels",
+      "title": "Partition Labels",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/partition-labels/",
+      "rating": "medium",
+      "attempts": 2,
+      "firstSolved": "2026-11-21T17:21:29.651101+00:00",
+      "lastAttempt": "2026-11-21T17:33:19.421838+00:00"
     }
   }
 }
