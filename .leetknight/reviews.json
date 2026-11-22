@@ -106,10 +106,10 @@
       "title": "Max Area of Island",
       "difficulty": "Medium",
       "url": "https://leetcode.com/problems/max-area-of-island/",
-      "rating": "medium",
-      "attempts": 1,
+      "rating": "easy",
+      "attempts": 2,
       "firstSolved": "2026-09-02T09:35:46.545510+00:00",
-      "lastAttempt": "2026-09-02T09:35:46.545510+00:00"
+      "lastAttempt": "2026-11-22T07:52:12.689854+00:00"
     },
     "shortest-path-in-binary-matrix": {
       "slug": "shortest-path-in-binary-matrix",

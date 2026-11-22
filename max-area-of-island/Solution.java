@@ -1,36 +1,39 @@
-// Time:  O(N.M) where N, M are length of rows and columns
-// Space: O(N.M)
+// Time:  O(R·C) where R is number of rows and C is number of columns 
+// Space: O(R·C)
 
 class Solution {
-    private int ROWS;
-    private int COLS;
+    int ROWS = 0;
+    int COLS = 0;
+    int[][] DIRCTIONS = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
     public int maxAreaOfIsland(int[][] grid) {
-        this.ROWS = grid.length;
-        this.COLS = grid[0].length;
-
         int maxArea = 0;
-        for (int i = 0; i < ROWS; i++) {
-            for (int j = 0; j < COLS; j++) {
-                if (grid[i][j] == 0) continue;
-                maxArea = Math.max(maxArea, dfs(grid, i, j));
+        ROWS = grid.length;
+        COLS = grid[0].length;
+
+        for (int r = 0; r < ROWS; r++) {
+            for (int c = 0; c < COLS; c++) {
+                if (grid[r][c] == 0) continue;
+                maxArea = Math.max(maxArea, dfs(r, c, grid));
             }
         }
 
         return maxArea;
     }
 
-    int dfs(int[][] grid, int row, int col) {
-        if (Math.min(row, col) < 0 
-        || row == ROWS || col == COLS || grid[row][col] == 0) return 0;
-
+    private int dfs(int row, int col, int[][] grid) {
+        
         grid[row][col] = 0;
-        int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+        int count = 1;
+        for (int[] direction : DIRCTIONS) {
+            int nextRow = row + direction[0];
+            int nextCol = col + direction[1];
 
-        int area = 0;
-        for (int[] direction : directions) {
-            area += dfs(grid, row + direction[0], col + direction[1]);
+            if (nextRow < 0 || nextRow == ROWS || nextCol < 0 || nextCol == COLS) continue;
+            if (grid[nextRow][nextCol] == 0) continue;
+            count += dfs(nextRow, nextCol, grid);
         }
-        return area + 1;
+
+        return count;
     }
 }
