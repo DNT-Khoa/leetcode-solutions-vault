@@ -96,10 +96,10 @@
       "title": "Number of Islands",
       "difficulty": "Medium",
       "url": "https://leetcode.com/problems/number-of-islands/",
-      "rating": "medium",
-      "attempts": 2,
+      "rating": "easy",
+      "attempts": 4,
       "firstSolved": "2026-09-02T09:10:10.527357+00:00",
-      "lastAttempt": "2026-09-02T09:17:10.489777+00:00"
+      "lastAttempt": "2026-11-22T07:39:46.947646+00:00"
     },
     "max-area-of-island": {
       "slug": "max-area-of-island",

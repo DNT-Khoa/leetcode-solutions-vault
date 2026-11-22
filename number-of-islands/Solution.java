@@ -1,35 +1,33 @@
-// Time:  O(M.N) where M and N are the length of rows and cols respectively
-// Space: O(M.N)
+// Time:  O(R·C) where R is number of rows and C is number of columns
+// Space: O(R·C)
 
 class Solution {
-    private int ROWS;
-    private int COLS;
+
+    private int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
     public int numIslands(char[][] grid) {
-        this.ROWS = grid.length;
-        this.COLS = grid[0].length;
-        boolean[][] visited = new boolean[ROWS][COLS];
-        int numOfIslands = 0;
-
-        for (int i = 0; i < ROWS; i++) {
-            for (int j = 0; j < COLS; j++) {
-                if (!visited[i][j] && grid[i][j] == '1') {
-                    numOfIslands++;
-                    dfs(visited, grid, i, j);
-                }
+        int islandsCount = 0;
+        
+        for (int r = 0; r < grid.length; r++) {
+            for (int c = 0; c < grid[0].length; c++) {
+                if (grid[r][c] == '0') continue;
+                islandsCount++;
+                dfs(r, c, grid);
             }
         }
-        return numOfIslands;
+
+        return islandsCount;
     }
 
-    void dfs(boolean[][] visited, char[][] grid, int currentRow, int currentCol) {
-        if (Math.min(currentRow, currentCol) < 0 || currentRow == ROWS || currentCol == COLS 
-        || grid[currentRow][currentCol] == '0' || visited[currentRow][currentCol]) return;
-
-        visited[currentRow][currentCol] = true;
-        int[][] directions = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+    private void dfs(int row, int col, char[][] grid) {
+        grid[row][col] = '0';
         for (int[] direction : directions) {
-            dfs(visited, grid, currentRow + direction[0], currentCol + direction[1]);
+            int nextRow = row + direction[0];
+            int nextCol = col + direction[1];
+
+            if (nextRow < 0 || nextRow == grid.length || nextCol < 0 || nextCol == grid[0].length) continue;
+            if (grid[nextRow][nextCol] == '0') continue;
+            dfs(nextRow, nextCol, grid);
         }
     }
 }
