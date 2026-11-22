@@ -127,9 +127,9 @@
       "difficulty": "Medium",
       "url": "https://leetcode.com/problems/rotting-oranges/",
       "rating": "medium",
-      "attempts": 2,
+      "attempts": 3,
       "firstSolved": "2026-09-05T16:25:45.856729+00:00",
-      "lastAttempt": "2026-09-05T16:29:25.469349+00:00"
+      "lastAttempt": "2026-11-22T11:05:07.237662+00:00"
     },
     "clone-graph": {
       "slug": "clone-graph",
