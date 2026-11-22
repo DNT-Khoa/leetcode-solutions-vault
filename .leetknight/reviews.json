@@ -136,10 +136,10 @@
       "title": "Clone Graph",
       "difficulty": "Medium",
       "url": "https://leetcode.com/problems/clone-graph/",
-      "rating": "medium",
-      "attempts": 2,
+      "rating": "easy",
+      "attempts": 4,
       "firstSolved": "2026-09-05T17:46:21.537877+00:00",
-      "lastAttempt": "2026-09-05T17:48:19.753442+00:00"
+      "lastAttempt": "2026-11-22T08:17:39.675123+00:00"
     },
     "pacific-atlantic-water-flow": {
       "slug": "pacific-atlantic-water-flow",

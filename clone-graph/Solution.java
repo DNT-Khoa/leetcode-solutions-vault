@@ -1,5 +1,7 @@
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
 // Definition for a Node.
@@ -20,27 +22,30 @@ class Node {
     }
 }
 */
-// Time:  O(V + E)
+// Time:  O(E + V) where E is the number of edges and V is the number of nodes
 // Space: O(V)
+
+
 class Solution {
+    Map<Node, Node> cloneMap = new HashMap<>();
+
     public Node cloneGraph(Node node) {
         if (node == null) return null;
-        Map<Integer, Node> map = new HashMap<>();
-        return clone(node, map);
-    }
 
-    Node clone(Node originalNode, Map<Integer, Node> map) {
-        if (!map.containsKey(originalNode.val)) {
-            map.put(originalNode.val, new Node(originalNode.val));
-        }
-        
-        for (Node neighbor : originalNode.neighbors) {
-            if (!map.containsKey(neighbor.val)) {
-                clone(neighbor, map);
-            }
-            map.get(originalNode.val).neighbors.add(map.get(neighbor.val));
+        Node clone = cloneMap.get(node);
+        if (clone == null) {
+            clone = new Node(node.val, new ArrayList<>());
+            cloneMap.put(node, clone);
         }
 
-        return map.get(originalNode.val);
+        for (Node originalNeighbor : node.neighbors) {
+            Node cloneNeighbor = cloneMap.get(originalNeighbor);
+            if (cloneNeighbor == null) {
+                cloneNeighbor = cloneGraph(originalNeighbor);
+            } 
+            clone.neighbors.add(cloneNeighbor);
+        }
+
+        return clone;
     }
 }
