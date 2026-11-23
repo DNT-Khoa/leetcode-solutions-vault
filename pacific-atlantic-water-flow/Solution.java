@@ -1,50 +1,71 @@
-// Time:  O(M.N) where M, N are num of rows and columns
-// Space: O(M.N)
+// Time:  O(R·C) where R is number of rows and C is number of columns
+// Space: O(R·C)
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.List;
 
 class Solution {
-    private int ROWS;
-    private int COLS;
-    private int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+    private static final int[][] DIRECTIONS = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+    private static int ROWS;
+    private static int COLS;
 
     public List<List<Integer>> pacificAtlantic(int[][] heights) {
-        this.ROWS = heights.length;
-        this.COLS = heights[0].length;
+        ROWS = heights.length;
+        COLS = heights[0].length;
+
+        boolean[][] pacificReach = new boolean[ROWS][COLS];
+        boolean[][] atlanticReach = new boolean[ROWS][COLS];
+
+        Deque<int[]> pacificQueue = new ArrayDeque<>();
+        Deque<int[]> atlanticQueue = new ArrayDeque<>();
+
+        for (int r = 0; r < ROWS; r++) {
+            pacificReach[r][0] = true;
+            pacificQueue.offer(new int[]{r, 0});
+
+            atlanticReach[r][COLS-1] = true;
+            atlanticQueue.offer(new int[]{r, COLS-1});
+        }
+
+        for (int c = 0; c < COLS; c++) {
+            pacificReach[0][c] = true;
+            pacificQueue.offer(new int[]{0, c});
+
+            atlanticReach[ROWS-1][c] = true;
+            atlanticQueue.offer(new int[]{ROWS-1, c});
+        }
+
+        bfs(heights, pacificQueue, pacificReach);
+        bfs(heights, atlanticQueue, atlanticReach);
+
         List<List<Integer>> result = new ArrayList<>();
-        boolean[][] pacificAdjacent = new boolean[ROWS][COLS];
-        boolean[][] atlanticAdjacent = new boolean[ROWS][COLS];
-
-        for (int i = 0; i < ROWS; i++) {
-            dfs(heights, i, 0, pacificAdjacent);
-            dfs(heights, i, COLS - 1, atlanticAdjacent);
-        }
-
-        for (int j = 0; j < COLS; j++) {
-            dfs(heights, 0, j, pacificAdjacent);
-            dfs(heights, ROWS - 1, j, atlanticAdjacent);
-        }
-
-        for (int i = 0; i < ROWS; i++) {
-            for (int j = 0; j < COLS; j++) {
-                if (pacificAdjacent[i][j] && atlanticAdjacent[i][j]) result.add(List.of(i, j));
+        for (int r = 0; r < ROWS; r++) {
+            for (int c = 0; c < COLS; c++) {
+                if (pacificReach[r][c] && atlanticReach[r][c]) {
+                    result.add(List.of(r, c));
+                }
             }
         }
 
         return result;
-
     }
 
-    void dfs(int[][] heights, int row, int col, boolean[][] visited) {
-        if (visited[row][col]) return;
-        visited[row][col] = true;
+    private void bfs(int[][] heights, Deque<int[]> queue, boolean[][] reach) {
+        while (!queue.isEmpty()) {
+           int[] cell = queue.poll();
 
-        for (int[] direction : directions) {
-            int nRow = direction[0] + row;
-            int nCol = direction[1] + col;
+            for (int[] direction : DIRECTIONS) {
+                int nextRow = cell[0] + direction[0];
+                int nextCol = cell[1] + direction[1];
 
-            if (nRow < 0 || nRow == ROWS || nCol < 0 || nCol == COLS || heights[nRow][nCol] < heights[row][col]) continue;
-            dfs(heights, nRow, nCol, visited);
-        } 
-    } 
+                if (nextRow < 0 || nextRow == ROWS || nextCol < 0 || nextCol == COLS) continue;
+                if (reach[nextRow][nextCol] || heights[nextRow][nextCol] < heights[cell[0]][cell[1]]) continue;
+
+                reach[nextRow][nextCol] = true;
+                queue.offer(new int[]{nextRow, nextCol});
+            }
+        }
+    }
 }
