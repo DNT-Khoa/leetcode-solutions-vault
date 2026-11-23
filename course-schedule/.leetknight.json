@@ -1,0 +1,9 @@
+{
+  "slug": "course-schedule",
+  "title": "Course Schedule",
+  "difficulty": "Medium",
+  "questionId": "207",
+  "url": "https://leetcode.com/problems/course-schedule/",
+  "exampleTestcases": "2\n[[1,0]]\n2\n[[1,0],[0,1]]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public boolean canFinish(int numCourses, int[][] prerequisites) {\n        \n    }\n}\n"
+}

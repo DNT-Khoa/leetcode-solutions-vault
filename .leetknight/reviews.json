@@ -580,6 +580,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-23T12:27:44.855792+00:00",
       "lastAttempt": "2026-11-23T12:27:44.855792+00:00"
+    },
+    "course-schedule": {
+      "slug": "course-schedule",
+      "title": "Course Schedule",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/course-schedule/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-11-23T14:41:52.849003+00:00",
+      "lastAttempt": "2026-11-23T14:41:52.849003+00:00"
     }
   }
 }
