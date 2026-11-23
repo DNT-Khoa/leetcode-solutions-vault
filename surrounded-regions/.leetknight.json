@@ -1,0 +1,9 @@
+{
+  "slug": "surrounded-regions",
+  "title": "Surrounded Regions",
+  "difficulty": "Medium",
+  "questionId": "130",
+  "url": "https://leetcode.com/problems/surrounded-regions/",
+  "exampleTestcases": "[[\"X\",\"X\",\"X\",\"X\"],[\"X\",\"O\",\"O\",\"X\"],[\"X\",\"X\",\"O\",\"X\"],[\"X\",\"O\",\"X\",\"X\"]]\n[[\"X\"]]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public void solve(char[][] board) {\n        \n    }\n}\n"
+}
