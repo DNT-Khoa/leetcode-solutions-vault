@@ -1,0 +1,9 @@
+{
+  "slug": "course-schedule-ii",
+  "title": "Course Schedule II",
+  "difficulty": "Medium",
+  "questionId": "210",
+  "url": "https://leetcode.com/problems/course-schedule-ii/",
+  "exampleTestcases": "2\n[[1,0]]\n4\n[[1,0],[2,0],[3,1],[3,2]]\n1\n[]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public int[] findOrder(int numCourses, int[][] prerequisites) {\n        \n    }\n}\n"
+}

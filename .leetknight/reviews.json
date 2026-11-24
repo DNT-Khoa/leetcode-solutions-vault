@@ -590,6 +590,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-23T14:41:52.849003+00:00",
       "lastAttempt": "2026-11-23T14:41:52.849003+00:00"
+    },
+    "course-schedule-ii": {
+      "slug": "course-schedule-ii",
+      "title": "Course Schedule II",
+      "difficulty": "Medium",
+      "url": "https://leetcode.com/problems/course-schedule-ii/",
+      "rating": "medium",
+      "attempts": 3,
+      "firstSolved": "2026-11-24T18:56:29.662101+00:00",
+      "lastAttempt": "2026-11-24T19:01:08.835643+00:00"
     }
   }
 }
