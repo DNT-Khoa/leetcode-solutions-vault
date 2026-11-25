@@ -1,6 +1,6 @@
 # Graph DFS Cheatsheet
 
-Personal reference for depth-first search on graphs and grids: recursive and iterative templates, the "mutate the grid" trick, cycle detection with three colors, and topological sort.
+Personal reference for depth-first search on graphs and grids: recursive and iterative templates, the "mutate the grid" trick, cycle detection (three colors for directed, parent check for undirected), counting components, and topological sort.
 
 ---
 
@@ -157,31 +157,99 @@ boolean hasCycle(int node, List<List<Integer>> adj) {
 }
 ```
 
-Two colors (visited / not-visited) are enough for **undirected** graphs — but you must also pass the parent to skip the trivial "back to where I came from" edge. Three colors are required for directed graphs, where an edge to a BLACK node is fine (it's a cross-edge or forward-edge, not a cycle).
+An edge to a **BLACK** node is fine in a directed graph. Here's why a plain visited flag isn't enough:
+
+```
+    A
+   ↙ ↘
+  B   C
+   ↘ ↙
+    D
+```
+
+DFS goes A → B → D and finishes D (BLACK). Then A → C → D: D is already visited, but there's no cycle, because you can never get from D back to A. Two paths just met at D. Only an edge to a **GRAY** node (one still on the current path) means you've looped back.
+
+Undirected graphs work differently; see §8.
 
 ---
 
-## 8. Topological sort (DFS post-order)
+## 8. Cycle detection in an undirected graph (parent check)
 
-For a DAG, a valid topological order is the **reverse of the DFS post-order**.
+In an undirected graph, reaching **any** visited node is a cycle, with one exception: the node you just came from.
+
+### Why the parent is the exception
+
+An undirected edge u - v is stored in **both** directions: `adj[u]` has v and `adj[v]` has u. So from v you always see u, and u is always visited, because you just came from there.
+
+Take the smallest tree there is, `0 - 1`, and check cycles with only `visited`:
+
+1. `dfs(0)` marks 0 and goes to 1.
+2. `dfs(1)` marks 1 and sees neighbor 0.
+3. 0 is visited, so it reports a cycle. **Wrong.** It's the same edge seen from the other end.
+
+So pass the parent and skip it:
 
 ```java
-void topoDfs(int node, List<List<Integer>> adj, int[] color, Deque<Integer> stack) {
-    color[node] = 1;
+boolean hasCycle(int node, int parent, List<List<Integer>> adj, boolean[] visited) {
+    visited[node] = true;
     for (int nb : adj.get(node)) {
-        if (color[nb] == 1) throw new IllegalStateException("cycle");
-        if (color[nb] == 0) topoDfs(nb, adj, color, stack);
+        if (nb == parent) continue;                 // the edge we came in on
+        if (visited[nb]) return true;               // a second way back: real cycle
+        if (hasCycle(nb, node, adj, visited)) return true;
     }
-    color[node] = 2;
-    stack.push(node);            // push on FINISH → pop yields reverse post-order
+    return false;
 }
 ```
 
-Loop `topoDfs` over every unvisited node, then drain `stack` — that's your topological order. Kahn's algorithm (BFS on in-degree zero) is the iterative alternative and gives the same guarantees.
+`visited` tells you a node was seen, not **why**. The parent check tells the two cases apart:
+
+| Visited neighbor is... | Meaning |
+|---|---|
+| Your parent | the same edge seen from the other end, so ignore it |
+| Any other node | a second path back to it, so it's a real cycle |
+
+(If the input can contain the same edge twice, e.g. `[[0,1],[1,0]]`, skipping by node would hide that 2-node cycle. Skip by edge index in that case. LeetCode tree problems normally rule this out.)
+
+### Why two states are enough here but not in directed graphs
+
+In the directed diamond in §7, a **separate branch** reached a node that was already finished, and that was harmless. In an undirected graph that can't happen: if a later branch can reach a node, that node can also reach the branch, so DFS would have gone there **before** finishing the node. Any visited node you reach (other than your parent) is one you can get back to, which means a cycle.
+
+| | Directed | Undirected |
+|---|---|---|
+| Can a separate branch reach a finished node? | Yes (the diamond) | No |
+| What counts as a cycle | an edge to a GRAY node | an edge to any visited node except the parent |
+| State needed | 3 colors | `visited` + parent |
+
+### When you don't need the parent check: counting components
+
+The parent check exists only so cycle detection doesn't report a false cycle. If you're **not** looking for cycles, you don't need it. In 323. Number of Connected Components, a visited neighbor just gets skipped, whether it's the parent or not, so plain `visited` is enough:
+
+```java
+int count = 0;
+for (int node = 0; node < n; node++) {
+    if (visited[node]) continue;
+    dfs(node, adj, visited);     // marks the whole component
+    count++;                     // one DFS = one component
+}
+```
+
+The outer loop goes over **every** node, so isolated nodes (no edges) still count as components. This is Number of Islands with an adjacency list in place of a grid.
+
+### Valid tree with DFS (261)
+
+A tree needs **no cycle and connected**. Check `edges.length == n - 1` first; then the two imply each other, so you only need to check connectivity: DFS from node 0 and make sure every node got visited. No parent check needed. See [Union-Find](Union_Find.md#pattern-3-is-it-a-valid-tree-the-n---1-edge-trick) for why.
 
 ---
 
-## 9. Complexity
+## 9. Topological sort (DFS post-order)
+
+For a DAG, a valid topological order is the **reverse of the DFS post-order**: run the three-color DFS from §7 and record each node when it turns BLACK. Fill the result array from the back (or push onto a stack) to reverse it.
+
+Full details, Kahn's algorithm (BFS on in-degree), and the edge-direction trap are in [Topological Sort](Topological_Sort.md).
+
+---
+
+## 10. Complexity
 
 - **Time: O(V + E)** — each vertex marked once, each edge examined once.
   - Grid: `V = M·N`, `E ≤ 4·M·N`, so **O(M·N)**.
@@ -190,7 +258,7 @@ Loop `topoDfs` over every unvisited node, then drain `stack` — that's your top
 
 ---
 
-## 10. Common pitfalls
+## 11. Common pitfalls
 
 1. **Marking after recursion instead of before** — infinite recursion between adjacent cells.
 2. **Forgetting the bounds check** — `ArrayIndexOutOfBoundsException` at the grid edges.
@@ -198,3 +266,8 @@ Loop `topoDfs` over every unvisited node, then drain `stack` — that's your top
 4. **Mutating the grid in a function whose caller still needs it** — surprises everyone.
 5. **Using two-color visited on a directed graph for cycle detection** — misses back-edges through already-finished nodes; use the three-color scheme in §7.
 6. **Backtracking without undoing state** — path enumeration must `remove` the node on exit; forgetting is the #1 backtracking bug.
+7. **Undirected cycle detection without the parent check** — every edge looks like a cycle, so every tree fails (§8).
+8. **Adding undirected edges in one direction only** — `adj[u].add(v)` needs a matching `adj[v].add(u)`.
+9. **Looping only over nodes that appear in edges** — isolated nodes are components too; loop `0..n-1`.
+
+Related docs: [Graph BFS](Graph_BFS.md), [Union-Find](Union_Find.md), [Topological Sort](Topological_Sort.md).
