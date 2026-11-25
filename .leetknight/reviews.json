@@ -610,6 +610,16 @@
       "attempts": 1,
       "firstSolved": "2026-11-25T08:31:47.394741+00:00",
       "lastAttempt": "2026-11-25T08:31:47.394741+00:00"
+    },
+    "word-ladder": {
+      "slug": "word-ladder",
+      "title": "Word Ladder",
+      "difficulty": "Hard",
+      "url": "https://leetcode.com/problems/word-ladder/",
+      "rating": "medium",
+      "attempts": 1,
+      "firstSolved": "2026-11-25T10:34:10.269529+00:00",
+      "lastAttempt": "2026-11-25T10:34:10.269529+00:00"
     }
   }
 }

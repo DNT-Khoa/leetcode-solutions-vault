@@ -1,0 +1,9 @@
+{
+  "slug": "word-ladder",
+  "title": "Word Ladder",
+  "difficulty": "Hard",
+  "questionId": "127",
+  "url": "https://leetcode.com/problems/word-ladder/",
+  "exampleTestcases": "\"hit\"\n\"cog\"\n[\"hot\",\"dot\",\"dog\",\"lot\",\"log\",\"cog\"]\n\"hit\"\n\"cog\"\n[\"hot\",\"dot\",\"dog\",\"lot\",\"log\"]",
+  "initialCode": "// Time:  O(?)\n// Space: O(?)\n\nclass Solution {\n    public int ladderLength(String beginWord, String endWord, List<String> wordList) {\n        \n    }\n}\n"
+}
