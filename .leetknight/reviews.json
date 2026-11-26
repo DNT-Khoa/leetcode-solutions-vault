@@ -276,10 +276,10 @@
       "title": "Reconstruct Itinerary",
       "difficulty": "Hard",
       "url": "https://leetcode.com/problems/reconstruct-itinerary/",
-      "rating": "hard",
-      "attempts": 1,
+      "rating": "medium",
+      "attempts": 2,
       "firstSolved": "2026-10-04T15:48:15.682195+00:00",
-      "lastAttempt": "2026-10-04T15:48:15.682195+00:00"
+      "lastAttempt": "2026-11-26T14:54:43.836177+00:00"
     },
     "implement-trie-prefix-tree": {
       "slug": "implement-trie-prefix-tree",

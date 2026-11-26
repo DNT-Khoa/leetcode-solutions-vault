@@ -1,40 +1,36 @@
+// Time:  O(ElogE) where E is the number of tickets
+// Space: O(E)
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-// Time:  O(E log E)
-// Space: O(V + E)
-
 class Solution {
-    private List<String> result;
-    private Map<String, PriorityQueue<String>> adjacencyList;
-
     public List<String> findItinerary(List<List<String>> tickets) {
-        result = new LinkedList<>();
-        adjacencyList = new HashMap<>();
-
-        buildAdjacencyList(tickets);
-        find("JFK");
-        
-        return result;
+        var adjMap = buildAdjacencyMap(tickets);
+        List<String> itinerary = new ArrayList<>();
+        dfs("JFK", adjMap, itinerary);
+        Collections.reverse(itinerary);
+        return itinerary;
     }
 
-    void find(String city) {
-        var nextCities = adjacencyList.get(city);
-        while (nextCities != null && !nextCities.isEmpty()) {
-            find(nextCities.poll());
+    private void dfs(String source, Map<String, PriorityQueue<String>> adjMap, List<String> itinerary) {
+        while (adjMap.containsKey(source) && !adjMap.get(source).isEmpty()) {
+            String target = adjMap.get(source).poll();
+            dfs(target, adjMap, itinerary);
         }
-        result.addFirst(city);
+        itinerary.add(source);
     }
 
-    void buildAdjacencyList(List<List<String>> tickets) {
-        for (List<String> ticket : tickets) {
-            String from = ticket.get(0);
-            String to = ticket.get(1);
-            adjacencyList.computeIfAbsent(from, k -> new PriorityQueue<>()).offer(to);
+    private Map<String, PriorityQueue<String>> buildAdjacencyMap(List<List<String>> tickets) {
+        Map<String, PriorityQueue<String>> adjMap = new HashMap<>();
+        for (var ticket : tickets) {
+            adjMap.computeIfAbsent(ticket.get(0), k -> new PriorityQueue<>()).offer(ticket.get(1));
         }
+
+        return adjMap;
     }
 }
