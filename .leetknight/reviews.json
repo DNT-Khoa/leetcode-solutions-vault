@@ -157,9 +157,9 @@
       "difficulty": "Medium",
       "url": "https://leetcode.com/problems/network-delay-time/",
       "rating": "medium",
-      "attempts": 2,
+      "attempts": 3,
       "firstSolved": "2026-09-07T18:08:05.078420+00:00",
-      "lastAttempt": "2026-09-30T18:47:18.009854+00:00"
+      "lastAttempt": "2026-11-26T13:19:50.945481+00:00"
     },
     "maximum-average-subarray-i": {
       "slug": "maximum-average-subarray-i",
